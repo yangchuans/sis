@@ -40,7 +40,7 @@ public class JsonUtil {
 		}
 	}
 
-    public static Object fromJson(String jsonString, TypeReference clazz) {
+    public static Object fromJson(String jsonString, TypeReference<?> clazz) {
 		if (StringUtils.isBlank(jsonString)) {
 			return null;
 		}
@@ -66,7 +66,6 @@ public class JsonUtil {
 	/**
 	 * 设置转换日期类型的format pattern,如果不设置默认打印Timestamp毫秒数.
 	 */
-	@SuppressWarnings("deprecation")
 	public static void setDateFormat(String pattern) {
 		if (!StringUtils.isBlank(pattern)) {
 			DateFormat df = new SimpleDateFormat(pattern);

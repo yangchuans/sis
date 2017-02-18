@@ -25,7 +25,7 @@
 		<javaClientGenerator targetPackage="com.sc.sis.mapper"
 			targetProject="src/main/java" type="XMLMAPPER" />
 		
-		<table tableName="auth_user">
+		<table tableName="point_data">
 			<generatedKey column="id" sqlStatement="MySql" identity="true" />
 		</table>
 	</context>

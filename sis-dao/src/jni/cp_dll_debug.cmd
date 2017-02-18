@@ -1,0 +1,1 @@
+copy /Y Debug\jni.dll ..\main\resources\libs\

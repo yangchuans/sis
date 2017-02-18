@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+       http://www.springframework.org/schema/util  http://www.springframework.org/schema/util/spring-util-4.3.xsd
+       http://www.springframework.org/schema/tx  http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+    <util:properties id="jdbc" location="classpath:jdbc.properties"/>
+    <bean id="innitDbEnv" class="com.sc.sis.pojo.InnitDbEnv" init-method="init">
+    		<property name="serverIp" value="#{jdbc['PI.serverIp']}"/>
+    		<property name="serverPort" value="#{jdbc['PI.serverPort']}"/>
+    		<property name="username" value="#{jdbc['PI.username']}"/>
+    		<property name="password" value="#{jdbc['PI.password']}"/>
+    </bean>
+    <bean id="dataSource"
+          class="com.jolbox.bonecp.BoneCPDataSource"
+          destroy-method="close">
+        <property name="driverClass" value="#{jdbc['datasource.driverClassName']}"/>
+        <property name="jdbcUrl" value="#{jdbc['datasource.jdbcUrl']}"/>
+        <property name="username" value="#{jdbc['datasource.username']}"/>
+        <property name="password" value="#{jdbc['datasource.password']}"/>
+        <property name="idleConnectionTestPeriodInMinutes" value="#{jdbc['BoneCP.IdleConnectionTestPeriodInMinutes']}"/>
+        <property name="idleMaxAgeInMinutes" value="#{jdbc['BoneCP.IdleMaxAgeInMinutes']}"/>
+        <property name="maxConnectionsPerPartition" value="#{jdbc['BoneCP.maxConnectionsPerPartition']}"/>
+        <property name="minConnectionsPerPartition" value="#{jdbc['BoneCP.minConnectionsPerPartition']}"/>
+        <property name="partitionCount" value="#{jdbc['BoneCP.partitionCount']}"/>
+        <property name="acquireIncrement" value="#{jdbc['BoneCP.acquireIncrement']}"/>
+        <property name="statementsCacheSize" value="#{jdbc['BoneCP.statementsCacheSize']}"/>
+    </bean>
+    <!-- 创建SqlSessionFactory，同时创建数据源-->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="configLocation" value="classpath:mybatis/mybatis-config.xml"/>
+        <property name="dataSource" ref="dataSource"/>
+        <property name="mapperLocations">
+            <array>
+                <value>classpath*:mybatis/sqlmap/**/*.xml</value>
+            </array>
+        </property>
+    </bean>
+    <!-- Mapper接口所在包名，Spring会自动查找其下的Mapper -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.sc.sis.mapper"/>
+    </bean>
+</beans>

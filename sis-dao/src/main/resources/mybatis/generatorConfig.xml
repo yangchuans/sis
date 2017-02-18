@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+<classPathEntry
+		location="C:/home/yangchuan/developer/m2/repository/mysql/mysql-connector-java/5.1.38/mysql-connector-java-5.1.38.jar" />
+	<context id="datacenter" targetRuntime="MyBatis3" introspectedColumnImpl="com.bdms.ibatis.generator.api.IntrospectedColumn">
+
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://192.168.100.17:3306/sis" userId="root"
+			password="123456" />
+
+		<javaTypeResolver type="com.bdms.ibatis.generator.types.JavaTypeResolverImpl">
+			<property name="forceBigDecimals" value="false"/>
+		</javaTypeResolver>
+
+		<javaModelGenerator targetPackage="com.sc.sis.model"
+			targetProject="src/main/java">
+			<property name="enableSubPackages" value="false" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<sqlMapGenerator targetPackage="mybatis.sqlmap"
+			targetProject="src/main/resources" />
+
+		<javaClientGenerator targetPackage="com.sc.sis.mapper"
+			targetProject="src/main/java" type="XMLMAPPER" />
+		
+		<table tableName="auth_user">
+			<generatedKey column="id" sqlStatement="MySql" identity="true" />
+		</table>
+	</context>
+</generatorConfiguration>

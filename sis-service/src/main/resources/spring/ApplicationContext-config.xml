@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	   xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+	   http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+       http://www.springframework.org/schema/util  http://www.springframework.org/schema/util/spring-util-4.3.xsd
+       http://www.springframework.org/schema/tx  http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+	<!-- Scans the classpath of this application for @Components to deploy as beans -->
+    <!-- 多个包名用逗号隔开, 但不能有空格 -->
+    <context:component-scan base-package="com.sc.sis.service"/>
+    <!-- (事物管理)transaction manager, use JtaTransactionManager for global tx -->
+    <bean id="distributedTransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <tx:advice id="distributedTxAdvice" transaction-manager="distributedTransactionManager">
+		<tx:attributes>
+			<tx:method name="save*" rollback-for="java.lang.Exception" propagation="REQUIRED" />
+			<tx:method name="update*" rollback-for="java.lang.Exception" propagation="REQUIRED" />
+			<tx:method name="delete*" rollback-for="java.lang.Exception" propagation="REQUIRED" />
+			<tx:method name="remove*" rollback-for="java.lang.Exception" propagation="REQUIRED" />
+			<tx:method name="put*" rollback-for="java.lang.Exception" propagation="REQUIRED" />
+			<tx:method name="add*" rollback-for="java.lang.Exception" propagation="REQUIRED" />
+			<tx:method name="insert*" rollback-for="java.lang.Exception" propagation="REQUIRED" />
+			<tx:method name="change*" rollback-for="java.lang.Exception" propagation="REQUIRED" />
+			<tx:method name="modify*" rollback-for="java.lang.Exception" propagation="REQUIRED" />
+			<tx:method name="set*" rollback-for="java.lang.Exception" propagation="REQUIRED" />
+			<tx:method name="toggle*" rollback-for="java.lang.Exception" propagation="REQUIRED" />
+			<tx:method name="commit*" rollback-for="java.lang.Exception" propagation="REQUIRED" />
+			<tx:method name="create*" rollback-for="java.lang.Exception" propagation="REQUIRED" />
+			<tx:method name="append*" rollback-for="java.lang.Exception" propagation="REQUIRED" />
+		</tx:attributes>
+	</tx:advice>
+	
+	<aop:config>
+		<aop:pointcut id="service" expression="execution(* com.sc.sis.service..*.* (..))" />
+		<aop:advisor advice-ref="distributedTxAdvice" pointcut-ref="service" />
+	</aop:config>
+    
+    <!-- 通过注解控制事物-->
+    <tx:annotation-driven transaction-manager="distributedTransactionManager"/> 
+</beans>

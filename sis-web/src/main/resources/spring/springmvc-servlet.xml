@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+       http://www.springframework.org/schema/context 
+       http://www.springframework.org/schema/context/spring-context-4.3.xsd
+       http://www.springframework.org/schema/mvc
+	   http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+       http://www.springframework.org/schema/aop 
+       http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+       http://www.springframework.org/schema/util  
+       http://www.springframework.org/schema/util/spring-util-4.3.xsd
+       http://www.springframework.org/schema/tx  
+       http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+	<context:component-scan base-package="com.sc.sis.dao,com.sc.sis.service,com.sc.sis.controller"/>
+    <mvc:view-controller path="/" view-name="redirect:/"/>
+    <!-- <mvc:resources mapping="/common/**" location="/common/" /> -->
+	<!-- Configures the @Controller programming model -->
+    <mvc:annotation-driven/>
+    <!-- Scans the classpath of this application for @Components to deploy as beans -->
+    <bean id="freeMarkerViewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+	        <property name="order" value="0"/>
+	        <property name="cache" value="true"/>
+	        <property name="prefix" value="" />
+	        <property name="suffix" value=".ftl"/>
+	        <property name="exposeRequestAttributes" value="true"/>
+	        <property name="exposeSessionAttributes" value="true"/>
+	        <property name="exposeSpringMacroHelpers" value="true"/>
+	        <property name="allowRequestOverride" value="true" />
+	        <property name="contentType" value="text/html;charset=UTF-8"/>
+	        <property name="requestContextAttribute" value="rc"/>
+    </bean>
+	 <bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+		     <property name="order" value="1" />
+		     <property name="contentNegotiationManager">
+	            <bean class="org.springframework.web.accept.ContentNegotiationManager">
+	                <constructor-arg>
+	                    <bean class="org.springframework.web.accept.PathExtensionContentNegotiationStrategy">
+	                        <constructor-arg>
+	                            <map>
+	                                <entry key="json">
+	                                    <util:constant static-field="org.springframework.http.MediaType.APPLICATION_JSON_VALUE" />
+	                                </entry>
+	                                <entry key="xml">
+	                                    <util:constant static-field="org.springframework.http.MediaType.APPLICATION_XML_VALUE" />
+	                                </entry>
+	                            </map>
+	                        </constructor-arg>
+	                    </bean>
+	                </constructor-arg>
+	            </bean>
+	        </property>
+	        <property name="viewResolvers">
+	            <list>
+	                <ref bean="freeMarkerViewResolver"/>
+	            </list>
+	        </property>
+	        <property name="defaultViews">
+	            <list>
+	                <bean class="org.springframework.web.servlet.view.json.MappingJackson2JsonView"/>
+	            </list>
+	        </property>
+	    </bean>
+</beans>

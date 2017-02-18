@@ -6,7 +6,7 @@
         <base href="<@spring.url '/'/>"/>
         <title>导航</title>
         <link type="text/css" href="common/ionic/css/ionic.min.css" rel="stylesheet">
-        <link type="text/css" href="css/common.css" rel="stylesheet">
+        <link type="text/css" href="css/mobile/common.css" rel="stylesheet">
         <link type="text/css" href="css/mobile/home.css" rel="stylesheet">
         <style type="text/css">
             body {

@@ -1,0 +1,88 @@
+body{
+	height:100%;
+	margin:0;
+}
+.form-control {
+    border-color: #cfdadd;
+    border-radius: 2px;
+}
+.form-control,
+.form-control:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+.form-control:focus {
+  border-color: #23b7e5;
+}
+.input-group-addon {
+
+    background-color: #edf1f2;
+    border-color: #cfdadd;
+}
+.navbar {
+  margin: 0;
+  border-width: 0;
+  border-radius: 0;
+  width:100%;
+  height：50px;
+  position:relative;;
+}
+
+.navbar .navbar-form-sm {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.navbar-md {
+  min-height: 60px;
+}
+
+.navbar-md .navbar-btn {
+  margin-top: 13px;
+}
+
+.navbar-md .navbar-form {
+  margin-top: 15px;
+}
+
+.navbar-md .navbar-nav > li > a {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.navbar-md .navbar-brand {
+  line-height: 60px;
+}
+
+.navbar-header > button {
+  padding: 10px 17px;
+  font-size: 22px;
+  line-height: 30px;
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+}
+
+.navbar-brand {
+  display: inline-block;
+  float: none;
+  height: auto;
+  padding: 0 20px;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 50px;
+  text-align: center;
+  color: white;
+  margin-top: -2px;
+}
+
+.navbar-brand:hover {
+  text-decoration: none;
+}
+.dropdown-menu>li>a:hover{
+   background-color: #edf1f2 !important;
+}
+[ng:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+   display: none !important;
+}
+  

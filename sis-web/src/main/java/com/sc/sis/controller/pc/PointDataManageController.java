@@ -13,14 +13,15 @@ import com.sc.sis.service.PointDataService;
 import com.sc.sis.util.JsonUtil;
 
 @Controller
-@RequestMapping("pointDataManage_pc")
+@RequestMapping(value="/pointDataManage_pc")
 public class PointDataManageController {
 	
 	@Autowired
 	PointDataService pointService;
 	
+	@RequestMapping(value="/toPage") 
 	public String toPage(Model model){
-		List<PointData> pointList = pointService.getPintDataListByExample(new PointDataExample());
+		List<PointData> pointList = pointService.getPintDataListByExample(null);
 		model.addAttribute("pointList", JsonUtil.toJson(pointList));
 		return "pc/pointDataManage";
 	}

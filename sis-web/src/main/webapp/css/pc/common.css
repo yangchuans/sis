@@ -1,0 +1,41 @@
+/* -------------------------SELECT2 相关 ----------------------------------------------------------*/
+.select2-results__option{
+    font-size:12px;
+}
+.select2-selection__rendered{
+    font-size:12px;
+}
+.select2-container .select2-selection--single .select2-selection__rendered{
+    text-align: left;
+}
+.select2-container--default .select2-selection--single {
+    border-top-left-radius:0px;
+    border-bottom-left-radius:0px;
+    height: 30px;
+}
+.select2-container--default .select2-selection--multiple {
+    border: 1px solid #ccc;
+    border-bottom-left-radius: 0;
+ 			border-top-left-radius: 0;
+}
+.select2-container--default
+.select2-container--open
+.select2-container--below 
+.select2-selection--single,
+.select2-container--default
+.select2-container--open
+.select2-container--below 
+.select2-selection--multiple {
+    border-bottom-right-radius: 4px;
+}
+.select2-container--default.select2-container--focus .select2-selection--multiple {
+    border: solid #ccc 1px;
+	max-width: 334px;
+}
+.glyphicon-asterisk{
+    color: red;
+}
+.label{
+	display: inline-block;
+	margin: auto 1px;
+}

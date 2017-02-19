@@ -32,7 +32,7 @@
 	        <ul class="nav navbar-nav navbar-right hidden-sm">
 	            <li ng-show="userInfo.hasLogin==true">
 	            	<a class="" ng-cloak>用户名：{{userInfo.userName}}</a>
-	            	<li id="logout"><a href="logout"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span><span>退出</span></a></li> 
+	            	<li id="logout"><a href="index"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span><span>退出</span></a></li> 
 	            </li>
 	        </ul>
         </div>

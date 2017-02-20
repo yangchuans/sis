@@ -97,7 +97,7 @@ app.controller('HomeTabCtrl', function($scope) {
 	            },
 	            title : {
 	                textStyle: {       // 其余属性默认使用全局文本样式，详见TEXTSTYLE
-	                    fontSize: 8,
+	                    fontSize: 12,
 	                },
 	                offsetCenter: ["20%", '-30%'],   
 	            },
@@ -145,7 +145,7 @@ app.controller('HomeTabCtrl', function($scope) {
 	            },
 	            title : {
 	                textStyle: {       // 其余属性默认使用全局文本样式，详见TEXTSTYLE
-	                    fontSize: 8,
+	                    fontSize: 12,
 	                },
 	                offsetCenter: ["-10%", '-30%'],  
 	            },

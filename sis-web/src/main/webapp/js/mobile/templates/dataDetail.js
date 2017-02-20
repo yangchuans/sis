@@ -2,7 +2,7 @@ app.controller('DataDetailTabCtrl', function($scope,$stateParams) {
 	  var homeChart = echarts.init(document.getElementById('homeChart'));
 	  var option = {
 	        title: {
-	            text: 'ECharts 入门示例'
+	            text: '测试数据'
 	        },
 	        tooltip: {},
 	        legend: {

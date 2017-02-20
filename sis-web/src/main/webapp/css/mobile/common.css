@@ -2,10 +2,12 @@
 #unitEconomyChart{
 	width:100%;
   	height:50%;
+  	margin-top: 10px;
 }
 #gaugeRow{
 	width:100%;
   	height:45%;
+  	margin-top: -30px;
 }
 #totalPowerChart{
 	width:50%;

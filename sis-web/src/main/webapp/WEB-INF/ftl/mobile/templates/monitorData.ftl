@@ -3,7 +3,7 @@
       <div class="list card">
          <a href="#/tab/dataDetail/{{item.fact_id}}/{{item.other_id}}" class="item item-icon-left" ng-repeat="item in linkArr">
             <i class={{item.icon_class}}></i>
-            Enter home address
+            {{item.text}}
          </a>
      </div>
     </ion-content>

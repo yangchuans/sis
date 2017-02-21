@@ -4,7 +4,10 @@ app.controller('HomeTabCtrl', function($scope) {
 	 var takeCoalChart = echarts.init(document.getElementById('takeCoalChart'));
 	 var option_unitEconomyChart = {
         title: {
-            text: '机组经济性评估'
+            text: '机组经济性评估',
+            textStyle:{
+            	fontSize:14,
+            }
         },
         tooltip : {
             trigger: 'axis',

@@ -20,17 +20,21 @@ public class RouteController {
     public String templates_home(Model model){
         return "mobile/templates/home";
     }
-	@RequestMapping(value="templates/setting")
-    public String templates_setting(Model model){
-        return "mobile/templates/setting";
+	@RequestMapping(value="templates/ecoInd")
+    public String templates_ecoInd(Model model){
+        return "mobile/templates/ecoInd";
     }
-	@RequestMapping(value="templates/monitorData")
-    public String templates_monitorData(Model model){
-        return "mobile/templates/monitorData";
+	@RequestMapping(value="templates/powerInd")
+    public String templates_powerInd(Model model){
+        return "mobile/templates/powerInd";
     }
-	@RequestMapping(value="templates/dataDetail")
-    public String templates_dataDetail(Model model){
-        return "mobile/templates/dataDetail";
+	@RequestMapping(value="templates/auxMacMonitor")
+    public String templates_auxMacMonitor(Model model){
+        return "mobile/templates/auxMacMonitor";
+    }
+	@RequestMapping(value="templates/profesMonitor")
+    public String templates_profesMonitor(Model model){
+        return "mobile/templates/profesMonitor";
     }
 	
 	//---------------------------PC端

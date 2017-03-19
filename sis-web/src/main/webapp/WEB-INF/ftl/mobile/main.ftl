@@ -27,7 +27,8 @@
   <script type="text/javascript" src="extend/echarts/echarts.min.js"></script>
   <script type="text/javascript" src="js/mobile/main.js"></script>
   <script type="text/javascript" src="js/mobile/templates/home.js"></script>
-  <script type="text/javascript" src="js/mobile/templates/monitorData.js"></script>
-  <script type="text/javascript" src="js/mobile/templates/setting.js"></script>
-  <script type="text/javascript" src="js/mobile/templates/dataDetail.js"></script>
+  <script type="text/javascript" src="js/mobile/templates/ecoInd.js"></script>
+  <script type="text/javascript" src="js/mobile/templates/powerInd.js"></script>
+  <script type="text/javascript" src="js/mobile/templates/auxMacMonitor.js"></script>
+  <script type="text/javascript" src="js/mobile/templates/profesMonitor.js"></script>
 </html>

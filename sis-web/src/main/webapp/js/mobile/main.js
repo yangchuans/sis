@@ -7,7 +7,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
            abstract: true,
            templateUrl: "templates/tabs",
        })
-       .state('tabs.home', {
+       .state('tabs.home', {     				//首页
            url: "/home",
            views: {
              'home-tab': {
@@ -16,30 +16,39 @@ app.config(function($stateProvider, $urlRouterProvider) {
              }
            }
        })
-       .state('tabs.setting', {
-           url: "/setting",
+       .state('tabs.ecoInd', {					//经济指标
+           url: "/ecoInd",
            views: {
-             'setting-tab': {
-               templateUrl: "templates/setting",
-               controller: 'SettingTabCtrl'
+             'ecoInd-tab': {
+               templateUrl: "templates/ecoInd",
+               controller: 'ecoIndTabCtrl'
              }
            }
        })
-       .state('tabs.monitorData', {
-           url: "/monitorData",
+       .state('tabs.powerInd', {		        //电量指标
+           url: "/powerInd",
            views: {
-             'monitorData-tab': {
-               templateUrl: "templates/monitorData",
-               controller: 'MonitorDataTabCtrl'
+             'powerInd-tab': {
+               templateUrl: "templates/powerInd",
+               controller: 'powerIndTabCtrl'
              }
            }
        })
-       .state('tabs.dataDetail', {
-           url: "/dataDetail/:fact_id/:other_id",
+        .state('tabs.auxMacMonitor', {		    //辅机监控
+           url: "/auxMacMonitor",
            views: {
-             'monitorData-tab': {
-               templateUrl: "templates/dataDetail",
-               controller: 'DataDetailTabCtrl'
+             'auxMacMonitor-tab': {
+               templateUrl: "templates/auxMacMonitor",
+               controller: 'auxMacMonitorTabCtrl'
+             }
+           }
+       })
+       .state('tabs.profesMonitor', {			//专业监视
+           url: "/profesMonitor",
+           views: {
+             'profesMonitor-tab': {
+               templateUrl: "templates/profesMonitor",
+               controller: 'profesMonitorTabCtrl'
              }
            }
        });

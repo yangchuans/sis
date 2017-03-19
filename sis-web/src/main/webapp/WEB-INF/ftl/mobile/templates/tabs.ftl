@@ -1,4 +1,4 @@
-<ion-tabs class="tabs-striped tabs-color-light tabs-icon-bottom tabs-dark">
+<ion-tabs class="tabs-striped tabs-color-light tabs-icon-bottom tabs-dark tabs-bottom">
     <ion-tab title="首页" icon="ion-home" href="#/tab/home">
         <ion-nav-view name="home-tab"></ion-nav-view>
     </ion-tab>

@@ -14,7 +14,8 @@ app.controller('HomeTabCtrl', function($scope) {
 		    },
 		    grid: {
 		        right: '2%',
-		        left: '10%'
+		        left: '10%',
+		        containLabel: true
 		    },
 		    
 		    legend: {
@@ -41,11 +42,13 @@ app.controller('HomeTabCtrl', function($scope) {
 		       
 		        {
 		            name:'#1机组',
+		            smooth:true,
 		            type:'line',
 		            data:[2.6, 5.9, 9.0, 26.4, 28.7, 30.7, 35.6, 35.2, 28.7, 18.8, 6.0, 2.3,2.6, 5.9, 9.0, 26.4, 28.7, 30.7, 35.6, 32.2, 28.7, 18.8, 6.0, 2.3]
 		        },
 		        {
 		            name:'#2机组',
+		            smooth:true,
 		            type:'line',
 		            data:[2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 20.3, 23.4, 23.0, 16.5, 12.0, 6.2,2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 20.3, 23.4, 23.0, 16.5, 12.0, 6.2]
 		        }

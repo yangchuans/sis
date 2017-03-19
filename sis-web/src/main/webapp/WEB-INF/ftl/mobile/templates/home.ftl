@@ -21,7 +21,7 @@
        			<h4>1213</h4><h6>MW</h6>
        		</div>
        		<div class="elecVal">
-       			<h4>2488</h4><h6>w*kwh</h6>
+       			<h4>2488</h4><h6>Wkwh</h6>
        		</div>
        		<div class="macGroup1">
        			<h5>#1机组 ：</h5><h4>556</h4><h5>MW</h5>

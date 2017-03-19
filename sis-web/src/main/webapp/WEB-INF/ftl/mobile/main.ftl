@@ -9,6 +9,7 @@
         <link type="text/css" href="css/mobile/common.css" rel="stylesheet">
         <link type="text/css" href="css/mobile/home.css" rel="stylesheet">
         <link type="text/css" href="css/mobile/ecoInd.css" rel="stylesheet">
+        <link type="text/css" href="css/mobile/powerInd.css" rel="stylesheet">
         <style type="text/css">
             body {
                 cursor: url('images/finger.png'), auto;

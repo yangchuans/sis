@@ -1,0 +1,24 @@
+.home_table{
+	margin-top:20px;
+	border: 1px solid #ddd;
+}
+#economyParams{
+	margin-top:10px;
+	border: 1px solid #ddd;
+}
+#commonParams{
+	margin-top:10px;
+	border: 1px solid #ddd;
+}
+.home_table > .col{
+	border: 0 solid #ddd;
+}
+.row-head{
+	background:#F9FAFB
+}
+.row-body {
+	border-top: 1px solid #ddd;
+}
+.col-head{
+	font-weight: bold;	
+}

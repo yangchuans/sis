@@ -8,6 +8,7 @@
         <link type="text/css" href="common/ionic/css/ionic.min.css" rel="stylesheet">
         <link type="text/css" href="css/mobile/common.css" rel="stylesheet">
         <link type="text/css" href="css/mobile/home.css" rel="stylesheet">
+        <link type="text/css" href="css/mobile/ecoInd.css" rel="stylesheet">
         <style type="text/css">
             body {
                 cursor: url('images/finger.png'), auto;

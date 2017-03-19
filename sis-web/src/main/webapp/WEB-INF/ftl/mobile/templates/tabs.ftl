@@ -8,7 +8,7 @@
     <ion-tab title="电量指标" icon="ion-battery-charging" href="#/tab/powerInd">
         <ion-nav-view name="powerInd-tab"></ion-nav-view>
     </ion-tab>
-    <ion-tab title="辅机监控" icon="ion-monitor" href="#/tab/auxMacMonitor">
+    <ion-tab title="辅机监控" icon="ion-speedometer" href="#/tab/auxMacMonitor">
         <ion-nav-view name="auxMacMonitor-tab"></ion-nav-view>
     </ion-tab>
     <ion-tab title="专业监视" icon="ion-stats-bars" href="#/tab/profesMonitor">

@@ -1,24 +1,103 @@
-.home_table{
-	margin-top:20px;
-	border: 1px solid #ddd;
+.backImg-cont{
+	height: 200px;
+	width: 100%;
 }
-#economyParams{
-	margin-top:10px;
-	border: 1px solid #ddd;
+.backImg{
+	height: 100%;
+	width: 100%;
 }
-#commonParams{
-	margin-top:10px;
-	border: 1px solid #ddd;
+.colp{
+	position: absolute;
+    left: 6px;
+    top: 5px
 }
-.home_table > .col{
-	border: 0 solid #ddd;
+.colp > h4{
+	color:white;
 }
-.row-head{
-	background:#F9FAFB
+.temper{
+	position: absolute;
+    left: 30px;
+    top: 40px
 }
-.row-body {
-	border-top: 1px solid #ddd;
+.temper > h4{
+	color:white;
 }
-.col-head{
-	font-weight: bold;	
+.weather{
+	position: absolute;
+    left: 50px;
+    top: 60px
 }
+.weather > h4{
+	color:white;
+}
+
+.loadTitle{
+	position: absolute;
+    left: 200px;
+    top: 40px
+}
+.loadTitle > h6{
+	color:white;
+}
+.elecTitle{
+	position: absolute;
+    left: 290px;
+    top: 40px
+}
+.elecTitle > h6{
+	color:white;
+}
+.loadVal{
+	position: absolute;
+    left: 205px;
+    top: 60px
+}
+.loadVal > h6,h4{
+	color:white;
+	display: inline-block;
+}
+.elecVal{
+	position: absolute;
+    left: 290px;
+    top: 60px
+}
+.elecVal > h6,h4{
+	color:white;
+	display: inline-block;
+}
+
+.macGroup1{
+	position: absolute;
+    left: 50px;
+    top: 150px
+}
+.macGroup1 > h6,h5{
+	color:white;
+	display: inline-block;
+}
+.macGroup2{
+	position: absolute;
+    left: 205px;
+    top: 150px
+}
+.macGroup2 > h6,h5{
+	color:white;
+	display: inline-block;
+}
+#todayloadChart{
+	height: 400px;
+	width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,4 +1,7 @@
 <ion-view view-title="经济指标">
+	<ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
     <ion-content class="padding">
     	 <div id="gaugeRow">
        		<div id="totalPowerChart"></div>

@@ -6,20 +6,30 @@ app.config(function($stateProvider, $urlRouterProvider) {
            url: "/tab",
            abstract: true,
            templateUrl: "templates/tabs",
+           controller: 'TabsCtrl'
        })
        .state('tabs.home', {     				//首页
            url: "/home",
            views: {
-             'home-tab': {
+             'tabs': {
                templateUrl: "templates/home",
                controller:"HomeTabCtrl"
+             }
+           }
+       })
+       .state('tabs.macLoad', {     				//首页
+           url: "/macLoad",
+           views: {
+             'tabs': {
+               templateUrl: "templates/macLoad",
+               controller:"MacLoadTabCtrl"
              }
            }
        })
        .state('tabs.ecoInd', {					//经济指标
            url: "/ecoInd",
            views: {
-             'ecoInd-tab': {
+             'tabs': {
                templateUrl: "templates/ecoInd",
                controller: 'ecoIndTabCtrl'
              }
@@ -28,7 +38,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
        .state('tabs.powerInd', {		        //电量指标
            url: "/powerInd",
            views: {
-             'powerInd-tab': {
+             'tabs': {
                templateUrl: "templates/powerInd",
                controller: 'powerIndTabCtrl'
              }
@@ -37,7 +47,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         .state('tabs.auxMacMonitor', {		    //辅机监控
            url: "/auxMacMonitor",
            views: {
-             'auxMacMonitor-tab': {
+             'tabs': {
                templateUrl: "templates/auxMacMonitor",
                controller: 'auxMacMonitorTabCtrl'
              }
@@ -46,7 +56,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
        .state('tabs.profesMonitor', {			//专业监视
            url: "/profesMonitor",
            views: {
-             'profesMonitor-tab': {
+             'tabs': {
                templateUrl: "templates/profesMonitor",
                controller: 'profesMonitorTabCtrl'
              }

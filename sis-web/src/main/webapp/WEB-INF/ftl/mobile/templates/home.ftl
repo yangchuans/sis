@@ -1,35 +1,30 @@
 <ion-view view-title="首页">
+	<ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
     <ion-content >
-       <div class="backImg-cont">
-       		<img class="backImg" src="images/sky.jpg">
-       		<div class="colp">
-       			<h4>京能宁东</h4>
-       		</div>
-       		<div class="temper">
-       			<h4>-10~9 ℃</h4>
-       		</div>
-       		<div class="weather">
-       			<h4>晴</h4>
-       		</div>
-       		<div class="loadTitle">
-       			<h6>全厂实时负荷</h6>
-       		</div>
-       		<div class="elecTitle">
-       			<h6>全厂实时电量</h6>
-       		</div>
-       		<div class="loadVal">
-       			<h4>1213</h4><h6>MW</h6>
-       		</div>
-       		<div class="elecVal">
-       			<h4>2488</h4><h6>Wkwh</h6>
-       		</div>
-       		<div class="macGroup1">
-       			<h5>#1机组 ：</h5><h4>556</h4><h5>MW</h5>
-       		</div>
-       		<div class="macGroup2">
-       			<h5>#2机组 ：</h5><h4>657</h4><h5>MW</h5>
-       		</div>
-       </div>	
-       <div id="todayloadChart"></div>
+       <div class="leoweatherDom">
+       		<div id="demo"></div>
+       </div>
+       <div id="canvas">
+			<div class="circle" id="circles-1"></div>
+			<div class="circle" id="circles-2"></div>
+		</div>
+		<div class="circleDesc">
+			<p>
+				<span style="margin-left: 20px;color:white;">全厂实时负荷(MW)</span>
+				<span style="margin-left: 50px;color:white;">全厂实时电量(Wkwh)</span>
+			</p>
+		</div>
+		<div id="canvas2">
+			<div class="circle" id="circles-3"></div>
+			<div class="circle" id="circles-4"></div>
+		</div>
+		<div class="circleDesc">
+			<p>
+				<span style="margin-left: 20px;color:white;">#1机组实时负荷(MW)</span>
+				<span style="margin-left: 40px;color:white;">#2机组实时负荷(MW)</span>
+			</p>
+		</div>
     </ion-content>
 </ion-view>

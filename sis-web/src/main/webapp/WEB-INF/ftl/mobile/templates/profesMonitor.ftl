@@ -1,4 +1,7 @@
 <ion-view view-title="专业监视">
+	<ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
     <ion-content class="padding">
     	   <div id="commonParams">
 	       		<div class="row row-head responsive-break">

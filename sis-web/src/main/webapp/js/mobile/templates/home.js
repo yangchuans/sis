@@ -1,58 +1,31 @@
 app.controller('HomeTabCtrl', function($scope) {
-	var todayloadChart = echarts.init(document.getElementById('todayloadChart'));
-	var option_todayloadChart = {
-		    title:{
-		        text:"今日机组负荷趋势图",
-		        textStyle:{
-		            fontSize:12
-		        }
-		        
-		    },
-		    color:  ['#5793f3', 'purple', '#675bba'],
-		    tooltip: {
-		        trigger: 'axis'
-		    },
-		    grid: {
-		        right: '2%',
-		        left: '10%',
-		        containLabel: true
-		    },
-		    
-		    legend: {
-		    	top:"3%",
-		        data:['#1机组','#2机组']
-		    },
-		    xAxis: [
-		        {
-		            type: 'category',
-		            axisTick: {
-		                alignWithLabel: true
-		            },
-		            data: ['1:00','2:00','3:00','4:00','5:00','6:00','7:00','8:00','9:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00','20:00','21:00','22:00','23:00','24:00']
-		        }
-		    ],
-		    yAxis: [
-		        {
-		            type: 'value',
-		            name: '负荷(mwh)',
-		            position: 'left',
-		        }
-		    ],
-		    series: [
-		       
-		        {
-		            name:'#1机组',
-		            smooth:true,
-		            type:'line',
-		            data:[2.6, 5.9, 9.0, 26.4, 28.7, 30.7, 35.6, 35.2, 28.7, 18.8, 6.0, 2.3,2.6, 5.9, 9.0, 26.4, 28.7, 30.7, 35.6, 32.2, 28.7, 18.8, 6.0, 2.3]
-		        },
-		        {
-		            name:'#2机组',
-		            smooth:true,
-		            type:'line',
-		            data:[2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 20.3, 23.4, 23.0, 16.5, 12.0, 6.2,2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 20.3, 23.4, 23.0, 16.5, 12.0, 6.2]
-		        }
-		    ]
-		};
-	todayloadChart.setOption(option_todayloadChart);
+	$('#demo').leoweather({format:'<i class="icon-{图标}">{气温}℃</i><p>{城市}<span>|</span>{天气}<span>|</span>{风向}{风级}级</p>'});
+	var colors = [
+		 ['#BEE3F7', '#45AEEA'], ['#F8F9B6', '#D2D558'], ['#D3B6C6', '#4B253A'], ['#FCE6A4', '#EFB917']
+	],circles = [],circles1=[];
+	for (var i = 1; i <= 4; i++) {
+		var child = document.getElementById('circles-' + i),
+		percentage = i==1?80:60,
+		circle = Circles.create({
+			id:         child.id,
+			value:      percentage,
+			radius:     getWidth(),
+			width:      15,
+			colors:     colors[i - 1]
+		});
+		if(i<=2){
+			circles.push(circle);
+		}else{
+			circles1.push(circle);
+		}
+	}
+	window.onresize = function(e) {
+		for (var i = 0; i < circles.length; i++) {
+			circles[i].updateRadius(getWidth());
+			circles1[i].updateRadius(getWidth());
+		}
+	};
+	function getWidth() {
+		return window.innerWidth / 5;
+	}
 });

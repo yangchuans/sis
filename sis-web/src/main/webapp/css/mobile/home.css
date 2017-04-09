@@ -84,14 +84,57 @@
 	color:white;
 	display: inline-block;
 }
-#todayloadChart{
-	height: 400px;
-	width: 100%;
+.leoweatherDom  { font:14px/1.5 Î¢ÈíÑÅºÚ; text-align:center; }
+#demo { width:100%; margin:0 auto; background:#387ef5; color:#FFF; padding:50px 0 100px 0; overflow:hidden; border-radius:0; height: 160px;}
+#demo i {
+    background: no-repeat top left;
+    display: inline-block;
+    height: 117px;
+    line-height: 123px;
+    font-size: 46px;
+    padding-left: 150px;
+    font-style: normal;
+    text-align: center;
+    font-weight: bold;
+    margin-top: -59px;
 }
 
+#demo i.icon-xiaoyu { background-image:url(../../images/xiaoyu.png); }
+#demo i.icon-zhongyu { background-image:url(../../images/zhongyu.png); }
+#demo i.icon-dayu { background-image:url(../../images/dayu.png); }
+#demo i.icon-qing { background-image:url(../../images/qing.png); }
+#demo i.icon-duoyun { background-image:url(../../images/duoyun.png); }
+#demo i.icon-yin { background-image:url(../../images/yin.png); }
+#demo p { background:rgba(0,0,0,.3); margin:20px 6px 0 6px; padding:2px; border-radius:1000px; font-size:12px; }
+#demo p span { margin:0 15px; }
 
-
-
+#canvas{
+	margin-top: 10px;
+}
+#canvas2{
+	margin-top: 14px;
+}
+#canvas .circle {
+	display: inline-block;
+	margin: 1em;
+}
+#canvas2 .circle {
+	display: inline-block;
+	margin: 1em;
+}
+.circles-decimals {
+	font-size: .4em;
+}
+.circleDesc{
+	width: 100%;
+	margin-top: -26px;
+}
+.circleDesc p{
+	background:gray; margin: 15px 6px 0 6px;padding: 2px;border-radius: 1000px;font-size: 12px;
+}
+.circleDesc p span{
+	margin: 0 15px;
+}
 
 
 

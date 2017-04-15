@@ -20,21 +20,10 @@
 			        <div class="col-item" >3小时</div>
 			      </div>
 			      <div class="col col-33" >
-			        <div class="col-item status_red">2016-05-11 09:08</div>
+			        <div class="col-item status_red">05-11 09:08</div>
 			      </div>
 			      <div class="col col-33" >
-			        <div class="col-item status_blue">2016-05-11 12:08</div>
-			      </div>
-		   </div>
-		    <div class="row row-body responsive-break">
-			      <div class="col col-33" >
-			        <div class="col-item" >3小时</div>
-			      </div>
-			      <div class="col col-33" >
-			        <div class="col-item status_red">2016-05-11 14:18</div>
-			      </div>
-			      <div class="col col-33" >
-			        <div class="col-item status_blue">2016-05-11 19:18</div>
+			        <div class="col-item status_blue">05-11 12:08</div>
 			      </div>
 		   </div>
 		    <div class="row row-body responsive-break">
@@ -42,10 +31,21 @@
 			        <div class="col-item" >3小时</div>
 			      </div>
 			      <div class="col col-33" >
-			        <div class="col-item status_red">2016-05-11 21:23</div>
+			        <div class="col-item status_red">05-11 14:18</div>
 			      </div>
 			      <div class="col col-33" >
-			        <div class="col-item status_blue">2016-05-11 23:23</div>
+			        <div class="col-item status_blue">05-11 19:18</div>
+			      </div>
+		   </div>
+		    <div class="row row-body responsive-break">
+			      <div class="col col-33" >
+			        <div class="col-item" >3小时</div>
+			      </div>
+			      <div class="col col-33" >
+			        <div class="col-item status_red">05-11 21:23</div>
+			      </div>
+			      <div class="col col-33" >
+			        <div class="col-item status_blue">05-11 23:23</div>
 			      </div>
 		   </div>
      </ion-content>

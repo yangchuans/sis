@@ -3,3 +3,16 @@
 	background-color: #5793f3;
 	height: 35px
 }
+.row{
+	height: 56px;
+}
+.font-green{
+	color:blue;
+}
+.font-warning{
+	color:#ffc900;
+}
+::-webkit-input-placeholder { color:black; }
+::-moz-placeholder { color:black; } /* firefox 19+ */
+:-ms-input-placeholder { color:black; } /* ie */
+input:-moz-placeholder { color:black; }

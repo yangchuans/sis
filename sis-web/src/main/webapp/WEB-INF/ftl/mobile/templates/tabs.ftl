@@ -17,6 +17,9 @@
              	<ion-item nav-clear menu-close href="#/tab/macLoad">
              		<p><i class="icon ion-ios-pulse-strong"></i><span  style="margin-left:1px;">机组负荷</span></p>
              	</ion-item>
+             	<ion-item nav-clear menu-close href="#/tab/prodInfo">
+             		<p><i class="icon ion-clipboard"></i><span  style="margin-left:1px;">生产信息</span></p>
+             	</ion-item>
         		<ion-item nav-clear menu-close href="#/tab/ecoInd">
         			<p><i class="icon ion-leaf"></i> 经济指标</p>
         		</ion-item>

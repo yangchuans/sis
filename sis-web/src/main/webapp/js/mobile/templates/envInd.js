@@ -9,4 +9,14 @@ app.controller('envIndTabCtrl', function($scope) {
     $scope.dateChage=function(){
     	console.log($("#now").val());
     }
+    $scope.addDate=function(plusVal){
+    	console.log(plusVal);
+    	var rst;
+    	if($("#now").val()){
+    		rst=moment($("#now").val()).add(plusVal, 'days').format("YYYY-MM-DD");
+    	}else if($("#now").attr("placeholder")){
+    		rst=moment($("#now").attr("placeholder")).add(plusVal, 'days').format("YYYY-MM-DD");
+    	}
+    	$('#now').attr('placeholder',rst);
+    }
 });

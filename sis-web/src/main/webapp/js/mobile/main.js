@@ -44,6 +44,15 @@ app.config(function($stateProvider, $urlRouterProvider) {
              }
            }
        })
+       .state('tabs.prodInfo', {					//环保指标
+           url: "/prodInfo",
+           views: {
+             'tabs': {
+               templateUrl: "templates/prodInfo",
+               controller: 'prodInfoTabCtrl'
+             }
+           }
+       })
        .state('tabs.powerInd', {		        //电量指标
            url: "/powerInd",
            views: {

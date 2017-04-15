@@ -1,5 +1,5 @@
 .row-head-item{
-	font-weight: bold;
+	color: white;
 }
 .row-head{
 	border-bottom: 2px solid #aaa;
@@ -7,8 +7,11 @@
 .row-body{
 	border-bottom: 1px solid #aaa;
 }
+.row-head > .col{
+	padding-top: 15px;
+}
 .row-body > .col{
-	padding-top: 12px;
+	padding-top: 23px;
 }
 .tabs-bottom{
 	position: absolute;

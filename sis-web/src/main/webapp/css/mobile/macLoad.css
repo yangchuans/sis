@@ -1,19 +1,27 @@
 .hourViewDom{
-	height: 400px;
+	height: 350px;
 	width: 100%;
 	margin-top:40px;
 }
 .dayViewDom{
-	height: 400px;
+	height: 350px;
 	width: 100%;
 	margin-top:40px;
 }
 .monthViewDom{
-	height: 400px;
+	height: 350px;
 	width: 100%;
 	margin-top:40px;
 }
 #hourloadChart{
+	height: 400px;
+	width: 100%;
+}
+#dayloadChart{
+	height: 400px;
+	width: 100%;
+}
+#monthloadChart{
 	height: 400px;
 	width: 100%;
 }

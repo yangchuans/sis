@@ -35,6 +35,15 @@ app.config(function($stateProvider, $urlRouterProvider) {
              }
            }
        })
+       .state('tabs.envInd', {					//环保指标
+           url: "/envInd",
+           views: {
+             'tabs': {
+               templateUrl: "templates/envInd",
+               controller: 'envIndTabCtrl'
+             }
+           }
+       })
        .state('tabs.powerInd', {		        //电量指标
            url: "/powerInd",
            views: {

@@ -33,6 +33,11 @@ public class RouteController {
         return "mobile/templates/ecoInd";
     }
 	
+	@RequestMapping(value="templates/envInd")
+    public String templates_envInd(Model model){
+        return "mobile/templates/envInd";
+    }
+	
 	@RequestMapping(value="templates/powerInd")
     public String templates_powerInd(Model model){
         return "mobile/templates/powerInd";

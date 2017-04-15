@@ -20,6 +20,9 @@
         		<ion-item nav-clear menu-close href="#/tab/ecoInd">
         			<p><i class="icon ion-leaf"></i> 经济指标</p>
         		</ion-item>
+        		<ion-item nav-clear menu-close href="#/tab/envInd">
+        			<p><i class="icon  ion-trash-b"></i></i><span style="margin-left:8px;">环保指标</span></p>
+        		</ion-item>
         		<ion-item nav-clear menu-close href="#/tab/powerInd">
         			<p><i class="icon ion-battery-charging"></i> 电量指标</p>
         		</ion-item>

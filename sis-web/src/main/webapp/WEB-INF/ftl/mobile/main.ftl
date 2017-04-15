@@ -12,6 +12,8 @@
         <link type="text/css" href="css/mobile/macLoad.css" rel="stylesheet">
         <link type="text/css" href="css/mobile/ecoInd.css" rel="stylesheet">
         <link type="text/css" href="css/mobile/powerInd.css" rel="stylesheet">
+        <link type="text/css" href="extend/lcalender/lcalender.css" rel="stylesheet">
+         <link type="text/css" href="css/mobile/envInd.css" rel="stylesheet">
         <style type="text/css">
             body {
                 cursor: url('images/finger.png'), auto;
@@ -26,6 +28,7 @@
   <script type="text/javascript" src="extend/echarts/echarts.min.js"></script>
   <script type="text/javascript" src="extend/leoweather/jquery.leoweather.min.js"></script>
   <script type="text/javascript" src="extend/circles/circles.js"></script>
+  <script type="text/javascript" src="extend/lcalender/lcalender.min.js"></script>
   
   <script type="text/javascript" src="js/mobile/main.js"></script>
   <script type="text/javascript" src="js/mobile/templates/tabs.js"></script>
@@ -35,4 +38,5 @@
   <script type="text/javascript" src="js/mobile/templates/powerInd.js"></script>
   <script type="text/javascript" src="js/mobile/templates/auxMacMonitor.js"></script>
   <script type="text/javascript" src="js/mobile/templates/profesMonitor.js"></script>
+  <script type="text/javascript" src="js/mobile/templates/envInd.js"></script>
 </html>

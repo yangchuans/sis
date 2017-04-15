@@ -53,6 +53,11 @@ public class RouteController {
         return "mobile/templates/auxMacMonitor";
     }
 	
+	@RequestMapping(value="templates/runDetail")
+    public String templates_runDetail(Model model){
+        return "mobile/templates/runDetail";
+    }
+	
 	@RequestMapping(value="templates/profesMonitor")
     public String templates_profesMonitor(Model model){
         return "mobile/templates/profesMonitor";

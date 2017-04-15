@@ -41,4 +41,5 @@
   <script type="text/javascript" src="js/mobile/templates/profesMonitor.js"></script>
   <script type="text/javascript" src="js/mobile/templates/envInd.js"></script>
   <script type="text/javascript" src="js/mobile/templates/prodInfo.js"></script>
+   <script type="text/javascript" src="js/mobile/templates/runDetail.js"></script>
 </html>

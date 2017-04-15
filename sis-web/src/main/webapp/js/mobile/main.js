@@ -71,6 +71,15 @@ app.config(function($stateProvider, $urlRouterProvider) {
              }
            }
        })
+       .state('tabs.runDetail', {		    //辅机监控
+           url: "/runDetail/:iterm_id",
+           views: {
+             'tabs': {
+               templateUrl: "templates/runDetail",
+               controller: 'runDetailTabCtrl'
+             }
+           }
+       })
        .state('tabs.profesMonitor', {			//专业监视
            url: "/profesMonitor",
            views: {

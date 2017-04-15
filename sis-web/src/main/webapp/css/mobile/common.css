@@ -18,4 +18,10 @@
     bottom: 0;
     clear: both;
 }
+.status_blue{
+	color:cornflowerblue;
+}
+.status_red{
+	color:red;
+}
     

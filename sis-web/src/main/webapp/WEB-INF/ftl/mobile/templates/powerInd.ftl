@@ -4,7 +4,7 @@
     </ion-nav-buttons>
     <ion-content >
     	 <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">
-		      <div class="tabs tabs-select-viewtype" style="margin-top:-45px;">
+		      <div id="chackActive3" class="tabs tabs-select-viewtype" style="margin-top:-45px;">
 			        <a class="tab-item active" ng-click="changeViewType('hour',0)">
 			      	         发电量
 			        </a>

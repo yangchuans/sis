@@ -11,7 +11,7 @@
     </ion-nav-buttons>
     <ion-content >
     	  <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">
-		      <div class="tabs tabs-select-viewtype" style="margin-top:-88px;">
+		      <div id="chackActive2"  class="tabs tabs-select-viewtype" style="margin-top:-88px;">
 			        <a class="tab-item active" ng-click="changeViewType('hour',0)">
 			      	          按时统计
 			        </a>
@@ -64,28 +64,28 @@
 			      <div class="list" >
 				        <a class="item item-icon-left" >
 				          <i class="icon  ion-android-arrow-dropdown-circle" style="color: #5793f3;font-size: 24px;"></i>
-				         	 当前数据
+				         	 当前负荷
 				          <span class="item-note" style="color: #5793f3;">
 				           630
 				          </span>
 				        </a>
 				        <a class="item item-icon-left" >
 				          <i class="icon  ion-arrow-up-a" style="color: #5793f3;font-size: 24px;"></i>
-				         	最高数据
+				         	最高负荷
 				          <span class="item-note" style="color: #5793f3;"> 
 				            688
 				          </span>
 				        </a>
 				        <a class="item item-icon-left " >
 				          <i class="icon ion-arrow-down-a" style="color: #5793f3;font-size: 24px;"></i>
-				          	最低数据
+				          	最低负荷
 				          <span class="item-note" style="color: #5793f3;">
 				           408
 				          </span>
 				        </a>
 				         <a class="item item-icon-left" >
 				          <i class="icon ion-pie-graph" style="color: #5793f3;font-size: 21px;"></i>
-				         	&nbsp百分比&nbsp
+				         	&nbsp负荷率&nbsp
 				          <span class="item-note" style="color: #5793f3;">
 				            81%
 				          </span>
@@ -99,28 +99,28 @@
 			      <div class="list" >
 				        <a class="item item-icon-left" >
 				          <i class="icon  ion-android-arrow-dropdown-circle" style="color: #5793f3;font-size: 24px;"></i>
-				         	 当前数据
+				         	 当前负荷
 				          <span class="item-note" style="color: #5793f3;">
 				           1530
 				          </span>
 				        </a>
 				        <a class="item item-icon-left" >
 				          <i class="icon  ion-arrow-up-a" style="color: #5793f3;font-size: 24px;"></i>
-				         	最高数据
+				         	最高负荷
 				          <span class="item-note" style="color: #5793f3;"> 
 				            1688
 				          </span>
 				        </a>
 				        <a class="item item-icon-left " >
 				          <i class="icon ion-arrow-down-a" style="color: #5793f3;font-size: 24px;"></i>
-				          	最低数据
+				          	最低负荷
 				          <span class="item-note" style="color: #5793f3;">
 				           1508
 				          </span>
 				        </a>
 				         <a class="item item-icon-left" >
 				          <i class="icon ion-pie-graph" style="color: #5793f3;font-size: 21px;"></i>
-				         	&nbsp百分比&nbsp
+				         	&nbsp负荷率&nbsp
 				          <span class="item-note" style="color: #5793f3;">
 				            90%
 				          </span>

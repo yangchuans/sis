@@ -1,8 +1,13 @@
 app.controller('powerIndTabCtrl', function($scope) {
 	$scope.showViewIndex = 0;
 	$scope.changeViewType=function(type,itemIndex){
-		$(".tabs-select-viewtype").children(".active").removeClass("active");
-		$($(".tabs-select-viewtype").children()[itemIndex]).addClass("active");
+		var s=[0,1,2];
+		$($("#chackActive3").children()[itemIndex]).addClass("active");
+		for(var i = 0;i<s.length;i++){
+			if(i!=itemIndex){
+				$($("#chackActive3").children()[i]).removeClass("active");
+			}
+		}
 		$scope.showViewIndex=itemIndex;
 	}
 	var hourProChart = echarts.init(document.getElementById('hourProChart'));

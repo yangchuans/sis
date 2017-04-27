@@ -18,5 +18,6 @@ app.controller('envIndTabCtrl', function($scope) {
     		rst=moment($("#now").attr("placeholder")).add(plusVal, 'days').format("YYYY-MM-DD");
     	}
     	$('#now').attr('placeholder',rst);
+    	$('#now').val(rst);
     }
 });

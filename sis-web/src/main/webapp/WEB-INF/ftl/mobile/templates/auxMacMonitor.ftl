@@ -12,7 +12,7 @@
     			style="width:100%;background: #5793f3;height:30px;margin-left: 34%;color：white;" ng-model="queryDate" ng-change="dateChage()" />
     		</div>
     		<div style="float:left;width:20%;margin-top:5px;" ng-click="addDate(1)">
-    			<i class="icon  ion-ios-arrow-right" style="color: white;font-size: 24px;float: left;"></i>
+    			<i class="icon  ion-chevron-right" style="color: white;font-size: 24px;float: left;"></i>
     		</div>
     	</div>
     	<div class="row row-head responsive-break" style="background:#5793f3">

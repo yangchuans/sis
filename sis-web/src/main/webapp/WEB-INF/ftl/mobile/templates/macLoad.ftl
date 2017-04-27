@@ -29,28 +29,28 @@
 			      <div class="list" >
 				        <a class="item item-icon-left" >
 				          <i class="icon  ion-android-arrow-dropdown-circle" style="color: #5793f3;font-size: 24px;"></i>
-				         	 当前数据
+				         	 当前负荷
 				          <span class="item-note" style="color: #5793f3;">
 				           11.2
 				          </span>
 				        </a>
 				        <a class="item item-icon-left" >
 				          <i class="icon  ion-arrow-up-a" style="color: #5793f3;font-size: 24px;"></i>
-				         	最高数据
+				         	最高负荷
 				          <span class="item-note" style="color: #5793f3;"> 
 				            23.4
 				          </span>
 				        </a>
 				        <a class="item item-icon-left " >
 				          <i class="icon ion-arrow-down-a" style="color: #5793f3;font-size: 24px;"></i>
-				          	最低数据
+				          	最低负荷
 				          <span class="item-note" style="color: #5793f3;">
 				           8
 				          </span>
 				        </a>
 				         <a class="item item-icon-left" >
 				          <i class="icon ion-pie-graph" style="color: #5793f3;font-size: 21px;"></i>
-				         	&nbsp百分比&nbsp
+				         	&nbsp负荷率&nbsp
 				          <span class="item-note" style="color: #5793f3;">
 				            92%
 				          </span>

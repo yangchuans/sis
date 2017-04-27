@@ -8,8 +8,8 @@
     			<i class="icon  ion-chevron-left" style="color: white;font-size: 24px;float: right;"></i>
     		</div>
     		<div style="float:left;width:60%;">
-    			<input id="now" type="text" readonly="" placeholder="2016-05-11" data-lcalendar="2016-05-11,2016-05-11" 
-    			style="width:100%;background: #5793f3;height:30px;margin-left: 34%;color：white;" ng-model="queryDate" ng-change="dateChage()" />
+    			<input id="now" type="text" readonly="" placeholder="2016-05-11" data-lcalendar="2016-05-11,2016-05-11" class="white" 
+    			style="width:100%;background: #5793f3;color:white;height:30px;margin-left: 34%;color：white;" ng-model="queryDate" ng-change="dateChage()" />
     		</div>
     		<div style="float:left;width:20%;margin-top:5px;" ng-click="addDate(1)">
     			<i class="icon  ion-chevron-right" style="color: white;font-size: 24px;float: left;"></i>

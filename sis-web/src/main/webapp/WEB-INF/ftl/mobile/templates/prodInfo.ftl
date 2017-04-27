@@ -40,7 +40,7 @@
 			        <div class="col-item ">1221</div>
 			      </div>
 			      <div class="col col-20" >
-			        <div class="col-item font-warning">3022</div>
+			        <div class="col-item ">3022</div>
 			      </div>
 		   </div>
 		   <div class="row row-body responsive-break">
@@ -54,7 +54,7 @@
 			        <div class="col-item ">455</div>
 			      </div>
 			      <div class="col col-20" >
-			        <div class="col-item font-warning">635</div>
+			        <div class="col-item">635</div>
 			      </div>
 		   </div>
 		   <div class="row row-body responsive-break">
@@ -68,7 +68,7 @@
 			        <div class="col-item ">455</div>
 			      </div>
 			      <div class="col col-20" >
-			        <div class="col-item font-warning" >635</div>
+			        <div class="col-item" >635</div>
 			      </div>
 		   </div>
 	    </div>

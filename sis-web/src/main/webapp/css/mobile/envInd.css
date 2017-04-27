@@ -10,9 +10,21 @@
 	color:blue;
 }
 .font-warning{
-	color:#ffc900;
+	color:#d44207;
 }
-::-webkit-input-placeholder { color:black; }
-::-moz-placeholder { color:black; } /* firefox 19+ */
-:-ms-input-placeholder { color:black; } /* ie */
-input:-moz-placeholder { color:black; }
+input[placeholder], [placeholder], *[placeholder] {
+   color:white !important;
+}
+input.white::-webkit-input-placeholder{  
+	color:white;/* WebKit browsers */
+}
+input.white:-moz-placeholder{  
+	color:white;/* Mozilla Firefox 4 to 18 */
+}
+input.white::-moz-placeholder{
+	color:white;/* Mozilla Firefox 19+ */
+}
+input.white:-ms-input-placeholder{ 
+	color:white;/* Internet Explorer 10+ */
+}
+

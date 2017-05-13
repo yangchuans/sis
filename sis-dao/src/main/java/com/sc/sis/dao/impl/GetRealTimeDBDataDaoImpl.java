@@ -47,4 +47,45 @@ public class GetRealTimeDBDataDaoImpl implements GetRealTimeDBDataDao{
 	public ArrayList<PointData> SC_GetRTPointFull(String[] points) {
 		return dao.SC_GetRTPointFull(points);
 	}
+
+	@Override
+	public PointData SC_GetHistPoint(String point, long time, short msec) {
+		return dao.SC_GetHistPoint(point, time, msec);
+	}
+
+	@Override
+	public ArrayList<PointData> SC_GetHistPoints(String[] points, long time, short msec) {
+		return dao.SC_GetHistPoints( points,  time,  msec);
+	}
+
+	@Override
+	public ArrayList<PointData> SC_GetHistRawUTC(String point, long timeStart, short timeStartMilli, long timeEnd,
+			short timeEndMilli) {
+		return dao.SC_GetHistRawUTC(point, timeStart, timeStartMilli, timeEnd, timeEndMilli);
+	}
+
+	@Override
+	public ArrayList<PointData> SC_GetHistSnapUTC(String point, long timeStart, long timeEnd, long timePeriod) {
+		return dao.SC_GetHistSnapUTC(point, timeStart, timeEnd, timePeriod);
+	}
+
+	@Override
+	public ArrayList<PointData> SC_GetHistAvgUTC(String point, long timeStart, long timeEnd, long timePeriod) {
+		return dao.SC_GetHistAvgUTC(point, timeStart, timeEnd, timePeriod);
+	}
+
+	@Override
+	public ArrayList<PointData> SC_GetHistMaxUTC(String point, long timeStart, long timeEnd, long timePeriod) {
+		return dao.SC_GetHistMaxUTC(point, timeStart, timeEnd, timePeriod);
+	}
+
+	@Override
+	public ArrayList<PointData> SC_GetHistMinUTC(String point, long timeStart, long timeEnd, long timePeriod) {
+		return dao.SC_GetHistMinUTC(point, timeStart, timeEnd, timePeriod);
+	}
+
+	@Override
+	public ArrayList<PointData> SC_GetHistInterpUTC(String points, long timeStart, long timeEnd, long timePeriod) {
+		return dao.SC_GetHistInterpUTC(points, timeStart, timeEnd, timePeriod);
+	}
 }

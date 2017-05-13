@@ -1,18 +1,27 @@
 package com.sc.rtdb;
 
-public class PointData {
-    private int retValue;
-    String point;
-    double value;
-    long time;
-    short msec;
-    short status;
-    
-    PointData() {
-        
+public class HistData {
+    private int retValue = -1;
+    String point = "";
+    double value = 0;
+    long time = 0;
+    short msec = 0;
+    short status = 0;
+
+    long timeStart = 0;
+    long timeEnd = 0;
+    long timePeriod = 0;
+    short timeStartMilli = 0;
+    short timeEndMilli = 0;
+
+    int nQueryReserve = -1;
+
+
+    HistData() {
+
     }
-    
-    public PointData(int retValue, String point, long time, double value, short msec, short status) {
+
+    public HistData(int retValue, String point, long time, double value, short msec, short status) {
         this.retValue = retValue;
         this.point = point;
         this.value = value;
@@ -58,10 +67,4 @@ public class PointData {
         this.status = status;
     }
 
-	@Override
-	public String toString() {
-		return "PointData [retValue=" + retValue + ", point=" + point + ", value=" + value + ", time=" + time
-				+ ", msec=" + msec + ", status=" + status + "]";
-	}
-    
 }

@@ -52,4 +52,8 @@ public interface GetRealTimeDBDataService {
     /* 取历史数据函数，获取在一段时间范围内存储于历史服务的点的插入值，时间格式是UTC时间。 */
     public  ArrayList<PointData> SC_GetHistInterpUTC(String points, long timeStart, long timeEnd,
                                                           long timePeriod);
+    
+    public static void main(String[] args) {
+		System.out.println(System.currentTimeMillis());
+	}
 }

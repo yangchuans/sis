@@ -1,4 +1,4 @@
-var app = angular.module('ionicApp', ['ionic'])
+var app = angular.module('ionicApp', ['ionic']);
 app.config(function($stateProvider, $urlRouterProvider) {
     //所有页面跳转的路由配置
     $stateProvider

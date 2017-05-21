@@ -23,6 +23,7 @@
   <body>
   	   <ion-nav-view></ion-nav-view>
   </body>
+  
   <script type="text/javascript" src="common/ionic/js/ionic.bundle.min.js"></script>
   <script type="text/javascript" src="common/jquery/jquery-1.8.3.min.js"></script>
   <script type="text/javascript" src="extend/echarts/echarts.min.js"></script>
@@ -31,6 +32,7 @@
   <script type="text/javascript" src="extend/circles/circles.js"></script>
   <script type="text/javascript" src="extend/lcalender/lcalender.min.js"></script>
   
+  <script type="text/javascript" src="js/mobile/pointlist.js"></script>
   <script type="text/javascript" src="js/mobile/main.js"></script>
   <script type="text/javascript" src="js/mobile/templates/tabs.js"></script>
   <script type="text/javascript" src="js/mobile/templates/home.js"></script>

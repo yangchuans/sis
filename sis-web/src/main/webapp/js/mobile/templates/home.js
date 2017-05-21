@@ -1,4 +1,4 @@
-app.controller('HomeTabCtrl', function($scope) {
+app.controller('HomeTabCtrl', function($scope,$interval) {
 	$('#demo').leoweather({format:'<i class="icon-{图标}">{气温}℃</i><p>{城市}<span>|</span>{天气}<span>|</span>{风向}{风级}级</p>'});
 	var allFacLoad = echarts.init(document.getElementById('allFacLoad'));
 	var allFacEco = echarts.init(document.getElementById('allFacEco'));
@@ -50,7 +50,7 @@ app.controller('HomeTabCtrl', function($scope) {
                         width:10
                    },
                 },
-	            data:[{value: 150}]
+	            data:[{value: 0}]
 	        }
 		]
 	}; 
@@ -94,7 +94,7 @@ app.controller('HomeTabCtrl', function($scope) {
 	                    fontSize:20
 	                }
 	            },
-	            data:[{value: 170}],
+	            data:[{value: 0}],
 	            axisLine:{
 	               lineStyle:{
 	                    color: [[1, '#5793f3']],
@@ -150,7 +150,7 @@ app.controller('HomeTabCtrl', function($scope) {
                         width:10
                    },
                 },
-	            data:[{value: 320}]
+	            data:[{value: 0}]
 	        }
 		]
 	};
@@ -194,7 +194,7 @@ app.controller('HomeTabCtrl', function($scope) {
 	                    fontSize:20
 	                }
 	            },
-	            data:[{value: 400}],
+	            data:[{value: 0}],
 	            axisLine:{
 	               lineStyle:{
 	                    color: [[1, '#5793f3']],
@@ -208,34 +208,33 @@ app.controller('HomeTabCtrl', function($scope) {
 	allFacEco.setOption(option_allFacEco);
 	mac1.setOption(option_mac1);
 	mac2.setOption(option_mac2);
-//	var colors = [
-//		 ['#BEE3F7', '#45AEEA'], ['#F8F9B6', '#D2D558'], ['#D3B6C6', '#4B253A'], ['#FCE6A4', '#EFB917']
-//	],circles = [],circles1=[];
-//	for (var i = 1; i <= 4; i++) {
-//		var child = document.getElementById('circles-' + i),
-//		percentage = i==1?80:60,
-//		circle = Circles.create({
-//			id:         child.id,
-//			value:      percentage,
-//			radius:     getWidth(),
-//			width:      15,
-//			colors:     colors[i - 1]
-//		});
-//		if(i<=2){
-//			circles.push(circle);
-//		}else{
-//			circles1.push(circle);
-//		}
-//	}
-//	window.onresize = function(e) {
-//		for (var i = 0; i < circles.length; i++) {
-//			circles[i].updateRadius(getWidth());
-//			circles1[i].updateRadius(getWidth());
-//		}
-//	};
-//	function getWidth() {
-//		return window.innerWidth / 5;
-//	}
+	
+	//定时刷新数据
+	$interval(function(){
+		$.ajax({
+				type: "GET",
+				url: "GetPointDataController/getManyPointData?pointNames="+globalPoints.point1+","+globalPoints.point2+","+globalPoints.point3+","+globalPoints.point8,
+				success: function(data){
+					if(data.code="1"){
+						$scope.points = data.data;
+						option_allFacLoad.series[0].data[0].value=$scope.points[globalPoints.point1];
+						option_allFacEco.series[0].data[0].value = $scope.points[globalPoints.point8];
+						option_mac1.series[0].data[0].value=$scope.points[globalPoints.point2];
+						option_mac2.series[0].data[0].value=$scope.points[globalPoints.point3];
+						
+						allFacLoad.setOption(option_allFacLoad,true);
+						allFacEco.setOption(option_allFacEco,true);
+						mac1.setOption(option_mac1,true);
+						mac2.setOption(option_mac1,true);
+					}else{
+						console.log(data.msg)
+					}
+				},
+				error: function(){
+					console.log("请求首页数据异常！")
+				}
+		});
+	},1000);
 	
 	
 	

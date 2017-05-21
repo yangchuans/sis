@@ -25,7 +25,6 @@
     <mvc:annotation-driven/>
     <!-- Scans the classpath of this application for @Components to deploy as beans -->
     
-    <util:properties id="points" location="classpath:/points/pointlist.properties" />
     <bean id="freeMarkerViewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
 	        <property name="order" value="0"/>
 	        <property name="cache" value="true"/>

@@ -2,20 +2,44 @@ package com.sc.sis.dao.impl;
 
 import java.util.ArrayList;
 
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import com.sc.rtdb.PointData;
 import com.sc.rtdb.RealTimeDBDao;
 import com.sc.sis.dao.GetRealTimeDBDataDao;
+import com.sc.sis.pojo.InnitDbEnv;
 @Component
 public class GetRealTimeDBDataDaoImpl implements GetRealTimeDBDataDao{
 	
-	RealTimeDBDao dao = new RealTimeDBDao();
+	
+	final Logger log = Logger.getLogger(GetRealTimeDBDataDao.class);
+	
+	private RealTimeDBDao dao = InnitDbEnv.dao;
+	
+	
+	@Value("#{jdbc['PI.serverIp']}") 
+	private String serverIp;
+	
+	@Value("#{jdbc['PI.serverPort']}") 
+	private int serverPort;
+	
+	@Value("#{jdbc['PI.username']}") 
+	private String username;
+	
+	@Value("#{jdbc['PI.password']}") 
+	private String password;
+	
+	
 	
 	@Override
-	public int SC_InitialEnv(String serverIp, short serverPort, String username, String password) {
-		RealTimeDBDao dao = new RealTimeDBDao();
-		return dao.SC_InitialEnv(serverIp, serverPort, username, password);
+	public int SC_InitialEnv() {
+		int ret = dao.SC_InitialEnv(serverIp, (short) serverPort,username, password);
+		if (ret != 0) {
+			log.info("SC_InitialEnv 错误");
+	    }
+		return ret;
 	}
 
 	@Override

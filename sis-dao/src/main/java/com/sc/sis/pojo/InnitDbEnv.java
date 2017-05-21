@@ -49,9 +49,10 @@ public class InnitDbEnv {
 		this.password = password;
 	}
 	
+	public static RealTimeDBDao dao;
+	
 	public int init(){
-		
-		RealTimeDBDao dao = new RealTimeDBDao();
+		dao = new RealTimeDBDao();
 		int ret = dao.SC_InitialEnv(serverIp, serverPort, username, password);
 		if (ret != 0) {
 			LOGGER.error("PI数据库连接初始化 错误！！！！！！！");

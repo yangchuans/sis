@@ -15,8 +15,8 @@ public class GetRealTimeDBDataServiceImpl implements GetRealTimeDBDataService {
 	GetRealTimeDBDataDao realTimeDBDataDao;
 
 	@Override
-	public int SC_InitialEnv(String serverIp, short serverPort, String username, String password) {
-		return realTimeDBDataDao.SC_InitialEnv(serverIp, serverPort, username, password);
+	public int SC_InitialEnv() {
+		return realTimeDBDataDao.SC_InitialEnv();
 	}
 
 	@Override

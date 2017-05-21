@@ -6,7 +6,7 @@ import com.sc.rtdb.PointData;
 
 public interface GetRealTimeDBDataService {
 	 /* 初始化  */
-    public int SC_InitialEnv(String serverIp, short serverPort, String username, String password);
+    public int SC_InitialEnv();
 
     /* 反初始化 */
     public  void SC_UninitialEnv();

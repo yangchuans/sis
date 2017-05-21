@@ -11,12 +11,12 @@
        http://www.springframework.org/schema/util  http://www.springframework.org/schema/util/spring-util-4.3.xsd
        http://www.springframework.org/schema/tx  http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
     <util:properties id="jdbc" location="classpath:jdbc.properties"/>
-   <!--  <bean id="innitDbEnv" class="com.sc.sis.pojo.InnitDbEnv" init-method="init">
+    <bean id="innitDbEnv" class="com.sc.sis.pojo.InnitDbEnv" init-method="init">
     		<property name="serverIp" value="#{jdbc['PI.serverIp']}"/>
     		<property name="serverPort" value="#{jdbc['PI.serverPort']}"/>
     		<property name="username" value="#{jdbc['PI.username']}"/>
     		<property name="password" value="#{jdbc['PI.password']}"/>
-    </bean> -->
+    </bean>
     <bean id="dataSource"
           class="com.jolbox.bonecp.BoneCPDataSource"
           destroy-method="close">

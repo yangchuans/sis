@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
         <base href="<@spring.url '/'/>"/>
-        <title>瀵艰埅</title>
+        <title>sis</title>
         <link type="text/css" href="common/ionic/css/ionic.min.css" rel="stylesheet">
         <link type="text/css" href="css/mobile/common.css" rel="stylesheet">
         <link type="text/css" href="css/mobile/tabs.css" rel="stylesheet">

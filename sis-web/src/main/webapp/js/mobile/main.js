@@ -10,6 +10,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
        })
        .state('tabs.home', {     				//首页
            url: "/home",
+           cache:'false',
            views: {
              'tabs': {
                templateUrl: "templates/home",
@@ -19,6 +20,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
        })
        .state('tabs.macLoad', {     				//首页
            url: "/macLoad",
+           cache:'false',
            views: {
              'tabs': {
                templateUrl: "templates/macLoad",
@@ -28,6 +30,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
        })
        .state('tabs.ecoInd', {					//经济指标
            url: "/ecoInd",
+           cache:'false',
            views: {
              'tabs': {
                templateUrl: "templates/ecoInd",
@@ -37,6 +40,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
        })
        .state('tabs.envInd', {					//环保指标
            url: "/envInd",
+           cache:'false',
            views: {
              'tabs': {
                templateUrl: "templates/envInd",
@@ -46,6 +50,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
        })
        .state('tabs.prodInfo', {					//环保指标
            url: "/prodInfo",
+           cache:'false',
            views: {
              'tabs': {
                templateUrl: "templates/prodInfo",
@@ -55,6 +60,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
        })
        .state('tabs.powerInd', {		        //电量指标
            url: "/powerInd",
+           cache:'false',
            views: {
              'tabs': {
                templateUrl: "templates/powerInd",
@@ -64,6 +70,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
        })
         .state('tabs.auxMacMonitor', {		    //辅机监控
            url: "/auxMacMonitor",
+           cache:'false',
            views: {
              'tabs': {
                templateUrl: "templates/auxMacMonitor",
@@ -73,6 +80,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
        })
        .state('tabs.runDetail', {		    //辅机监控
            url: "/runDetail/:iterm_id",
+           cache:'false',
            views: {
              'tabs': {
                templateUrl: "templates/runDetail",
@@ -82,6 +90,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
        })
        .state('tabs.profesMonitor', {			//专业监视
            url: "/profesMonitor",
+           cache:'false',
            views: {
              'tabs': {
                templateUrl: "templates/profesMonitor",
@@ -91,4 +100,5 @@ app.config(function($stateProvider, $urlRouterProvider) {
        });
     //在配置（状态配置和when()方法）中没有找到url的任何匹配默认到home页
     $urlRouterProvider.otherwise("/tab/home");
+
 });

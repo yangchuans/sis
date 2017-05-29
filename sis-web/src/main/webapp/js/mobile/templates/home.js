@@ -1,4 +1,4 @@
-app.controller('HomeTabCtrl', function($scope,$interval) {
+app.controller('HomeTabCtrl', function($scope,$interval,$window) {
 	$('#demo').leoweather({format:'<i class="icon-{图标}">{气温}℃</i><p>{城市}<span>|</span>{天气}<span>|</span>{风向}{风级}级</p>'});
 	var allFacLoad = echarts.init(document.getElementById('allFacLoad'));
 	var allFacEco = echarts.init(document.getElementById('allFacEco'));
@@ -209,33 +209,48 @@ app.controller('HomeTabCtrl', function($scope,$interval) {
 	mac1.setOption(option_mac1);
 	mac2.setOption(option_mac2);
 	
+	
+	
+	    
 	//定时刷新数据
-	$interval(function(){
+	$scope.loadData = function(){
 		$.ajax({
-				type: "GET",
-				url: "GetPointDataController/getManyPointData?pointNames="+globalPoints.point1+","+globalPoints.point2+","+globalPoints.point3+","+globalPoints.point8,
-				success: function(data){
-					if(data.code="1"){
-						$scope.points = data.data;
-						option_allFacLoad.series[0].data[0].value=$scope.points[globalPoints.point1];
-						option_allFacEco.series[0].data[0].value = $scope.points[globalPoints.point8];
-						option_mac1.series[0].data[0].value=$scope.points[globalPoints.point2];
-						option_mac2.series[0].data[0].value=$scope.points[globalPoints.point3];
-						
-						allFacLoad.setOption(option_allFacLoad,true);
-						allFacEco.setOption(option_allFacEco,true);
-						mac1.setOption(option_mac1,true);
-						mac2.setOption(option_mac1,true);
-					}else{
-						console.log(data.msg)
-					}
-				},
-				error: function(){
-					console.log("请求首页数据异常！")
+			type: "GET",
+			url: "GetPointDataController/getManyPointData?pointNames="+globalPoints.point1+","+globalPoints.point2+","+globalPoints.point3+","+globalPoints.point8,
+			success: function(data){
+				if(data.code="1"){
+					$scope.points = data.data;
+					option_allFacLoad.series[0].data[0].value=$scope.points[globalPoints.point1];
+					option_allFacEco.series[0].data[0].value = $scope.points[globalPoints.point8];
+					option_mac1.series[0].data[0].value=$scope.points[globalPoints.point2];
+					option_mac2.series[0].data[0].value=$scope.points[globalPoints.point3];
+					
+					allFacLoad.setOption(option_allFacLoad,true);
+					allFacEco.setOption(option_allFacEco,true);
+					mac1.setOption(option_mac1,true);
+					mac2.setOption(option_mac1,true);
+				}else{
+					console.log(data.msg)
 				}
+			},
+			error: function(){
+				console.log("请求首页数据异常！")
+			}
 		});
-	},1000);
-	
-	
-	
+	};
+	$scope.loadData();
+	var autoRefresh;
+    //自动刷新
+    autoRefresh = $interval($scope.loadData, 1000);
+    //停止自动刷新
+    $scope.stopAutoRefresh = function () {
+        if (autoRefresh) {
+            $interval.cancel(autoRefresh);
+            autoRefresh = null;
+        }
+    };
+    //切换页面时停止自动刷新
+    $scope.$on('$stateChangeStart', function (angularEvent, current, previous) {
+    	$scope.stopAutoRefresh();
+    });
 });

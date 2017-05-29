@@ -1,4 +1,4 @@
-app.controller('HomeTabCtrl', function($scope,$interval,$window) {
+app.controller('HomeTabCtrl', function($scope,$interval) {
 	$('#demo').leoweather({format:'<i class="icon-{图标}">{气温}℃</i><p>{城市}<span>|</span>{天气}<span>|</span>{风向}{风级}级</p>'});
 	var allFacLoad = echarts.init(document.getElementById('allFacLoad'));
 	var allFacEco = echarts.init(document.getElementById('allFacEco'));
@@ -208,10 +208,6 @@ app.controller('HomeTabCtrl', function($scope,$interval,$window) {
 	allFacEco.setOption(option_allFacEco);
 	mac1.setOption(option_mac1);
 	mac2.setOption(option_mac2);
-	
-	
-	
-	    
 	//定时刷新数据
 	$scope.loadData = function(){
 		$.ajax({

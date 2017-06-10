@@ -41,7 +41,7 @@ public class RealTimeDBDaoTest {
 
         /* 获取多个点秒时标实时数据 */
         String[] points =
-                new String[] {"Plant_pwGen", "DCS1.GEMW", "DCS2.GEMW"};
+                new String[] {"DCS1.GEMW","DCS2.GEMW"};
         ArrayList<PointData> datas = dao.SC_GetRTPoint(points);           
         for (PointData data : datas) {
             if (data.getRetValue() != 0) {

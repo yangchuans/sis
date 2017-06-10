@@ -3,10 +3,9 @@
         <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
     </ion-nav-buttons>
     <ion-nav-buttons side="right">
-     	 <select style="background-color: #387ef5;border-color: transparent;color: white;">
-	      <option selected="selected">#1机组</option>
-	      <option>#2机组</option>
-	      <option>#3机组</option>
+     	 <select style="background-color: #387ef5;border-color: transparent;color: white;" id="curMacPoint" ng-model="curMacPoint" ng-change="changeMac()">
+	      <option value="1">#1机组</option>
+	      <option value="2">#2机组</option>
 	    </select>
     </ion-nav-buttons>
     <ion-content >
@@ -30,29 +29,29 @@
 				        <a class="item item-icon-left" >
 				          <i class="icon  ion-android-arrow-dropdown-circle" style="color: #5793f3;font-size: 24px;"></i>
 				         	 当前负荷
-				          <span class="item-note" style="color: #5793f3;">
-				           11.2
+				          <span id="hourCurLoad" class="item-note" style="color: #5793f3;">
+				          {{hourLoad.cur}}
 				          </span>
 				        </a>
 				        <a class="item item-icon-left" >
 				          <i class="icon  ion-arrow-up-a" style="color: #5793f3;font-size: 24px;"></i>
 				         	最高负荷
 				          <span class="item-note" style="color: #5793f3;"> 
-				            23.4
+				            {{hourLoad.max}}
 				          </span>
 				        </a>
 				        <a class="item item-icon-left " >
 				          <i class="icon ion-arrow-down-a" style="color: #5793f3;font-size: 24px;"></i>
 				          	最低负荷
 				          <span class="item-note" style="color: #5793f3;">
-				           8
+				          {{hourLoad.min}}
 				          </span>
 				        </a>
 				         <a class="item item-icon-left" >
 				          <i class="icon ion-pie-graph" style="color: #5793f3;font-size: 21px;"></i>
 				         	&nbsp负荷率&nbsp
 				          <span class="item-note" style="color: #5793f3;">
-				            92%
+				           {{hourLoad.per}}
 				          </span>
 				        </a>
 			      </div>
@@ -66,28 +65,28 @@
 				          <i class="icon  ion-android-arrow-dropdown-circle" style="color: #5793f3;font-size: 24px;"></i>
 				         	 当前负荷
 				          <span class="item-note" style="color: #5793f3;">
-				           630
+				          {{dayLoad.cur}}
 				          </span>
 				        </a>
 				        <a class="item item-icon-left" >
 				          <i class="icon  ion-arrow-up-a" style="color: #5793f3;font-size: 24px;"></i>
 				         	最高负荷
 				          <span class="item-note" style="color: #5793f3;"> 
-				            688
+				           {{dayLoad.max}}
 				          </span>
 				        </a>
 				        <a class="item item-icon-left " >
 				          <i class="icon ion-arrow-down-a" style="color: #5793f3;font-size: 24px;"></i>
 				          	最低负荷
 				          <span class="item-note" style="color: #5793f3;">
-				           408
+				           {{dayLoad.min}}
 				          </span>
 				        </a>
 				         <a class="item item-icon-left" >
 				          <i class="icon ion-pie-graph" style="color: #5793f3;font-size: 21px;"></i>
 				         	&nbsp负荷率&nbsp
 				          <span class="item-note" style="color: #5793f3;">
-				            81%
+				           {{dayLoad.per}}
 				          </span>
 				        </a>
 			      </div>
@@ -101,28 +100,28 @@
 				          <i class="icon  ion-android-arrow-dropdown-circle" style="color: #5793f3;font-size: 24px;"></i>
 				         	 当前负荷
 				          <span class="item-note" style="color: #5793f3;">
-				           1530
+				           {{monthLoad.cur}}
 				          </span>
 				        </a>
 				        <a class="item item-icon-left" >
 				          <i class="icon  ion-arrow-up-a" style="color: #5793f3;font-size: 24px;"></i>
 				         	最高负荷
 				          <span class="item-note" style="color: #5793f3;"> 
-				            1688
+				            {{monthLoad.max}}
 				          </span>
 				        </a>
 				        <a class="item item-icon-left " >
 				          <i class="icon ion-arrow-down-a" style="color: #5793f3;font-size: 24px;"></i>
 				          	最低负荷
 				          <span class="item-note" style="color: #5793f3;">
-				           1508
+				           {{monthLoad.min}}
 				          </span>
 				        </a>
 				         <a class="item item-icon-left" >
 				          <i class="icon ion-pie-graph" style="color: #5793f3;font-size: 21px;"></i>
 				         	&nbsp负荷率&nbsp
 				          <span class="item-note" style="color: #5793f3;">
-				            90%
+				            {{monthLoad.per}}
 				          </span>
 				        </a>
 			      </div>

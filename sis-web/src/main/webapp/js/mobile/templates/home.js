@@ -237,7 +237,7 @@ app.controller('HomeTabCtrl', function($scope,$interval) {
 	$scope.loadData();
 	var autoRefresh;
     //自动刷新
-    autoRefresh = $interval($scope.loadData, 1000);
+    autoRefresh = $interval($scope.loadData, 5000);
     //停止自动刷新
     $scope.stopAutoRefresh = function () {
         if (autoRefresh) {

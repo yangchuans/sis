@@ -60,18 +60,21 @@ app.controller('envIndTabCtrl', function($scope,$interval) {
 			}
 		});
 	}
-    $scope.loadData($("#now").val());
+    $scope.loadData($("#now").attr("placeholder"));
     $scope.changeDate=function(){
+    	if($("#now").val()){
+    		$("#now").attr("placeholder",$("#now").val());
+    	}
 		 $scope.stopAutoRefresh();
 		 autoRefresh = $interval(function(){
-			 $scope.loadData($("#now").val());
-		 }, 1000);
+			 $scope.loadData($("#now").attr("placeholder"));
+		 }, 5000);
 	}
     var autoRefresh;
     //自动刷新
     autoRefresh = $interval(function(){
-		 $scope.loadData($("#now").val());
-	 }, 1000);
+		 $scope.loadData($("#now").attr("placeholder"));
+	 }, 5000);
     //停止自动刷新
     $scope.stopAutoRefresh = function () {
         if (autoRefresh) {

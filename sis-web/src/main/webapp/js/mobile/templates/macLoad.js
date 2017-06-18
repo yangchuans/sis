@@ -278,7 +278,7 @@ app.controller('MacLoadTabCtrl', function($scope,$interval ) {
 					default:
 						break;
 				}
-		    }, 1000);
+		    }, 5000);
 	}
 	var autoRefresh;
     //自动刷新
@@ -294,7 +294,7 @@ app.controller('MacLoadTabCtrl', function($scope,$interval ) {
 			default:
 				break;
 		}
-    }, 1000);
+    }, 5000);
     //停止自动刷新
     $scope.stopAutoRefresh = function () {
         if (autoRefresh) {

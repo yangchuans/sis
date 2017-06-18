@@ -137,7 +137,7 @@ app.controller('prodInfoTabCtrl', function($scope,$interval) {
     autoRefresh = $interval(function(){
     	$scope.loadData_producInfo();
     	$scope.loadData_listOfInd($scope.curMacPoint);
-    }, 1000);
+    }, 5000);
     //停止自动刷新
     $scope.stopAutoRefresh = function () {
         if (autoRefresh) {

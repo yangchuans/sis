@@ -284,5 +284,70 @@ public class GetPointDataController {
 		model.addAttribute("success", true);
 		model.addAttribute("msg", "获取数据成功！");
 	}
-	
+	@RequestMapping(value="/getHistAvgUTCByType")
+    public void getHistAvgUTCByType(String point, long timeStart, long timeEnd,
+            					long timePeriod,String type,Model model){
+		if(StringUtils.isBlank(point)||StringUtils.isBlank(type)){
+			model.addAttribute("success", false);
+			model.addAttribute("msg", "points="+point+" type="+type);
+			return;
+		}
+		if(timeEnd<timeStart){
+			model.addAttribute("success", false);
+			model.addAttribute("msg", "timeStart>timeEnd");
+			return;
+		}
+		if(timePeriod<0){
+			model.addAttribute("success", false);
+			model.addAttribute("msg", "timePeriod="+timePeriod);
+			return;
+		}
+		
+		List<PointData> pointDataList = null;
+		try {
+			pointDataList = getRealTimeDBDataService.SC_GetHistAvgUTC(point, timeStart, timeEnd, timePeriod);
+		} catch (Exception e) {
+			log.error("getHistAvgUTCByType失败！points="+point, e);
+		}
+		
+		String timeFomaterStr="";
+		switch(type){
+		   	case "day"  : timeFomaterStr="MM-dd"; break;
+		   	case "month": timeFomaterStr="yy-MM";    break;
+		 	case "year"  : timeFomaterStr="yyyy"; break;
+		   	default :
+		   		model.addAttribute("success", false);
+				model.addAttribute("messsage", "type类型位置："+type);
+		   		return ;
+		}
+		Map<String,String> time_Val = new LinkedHashMap<>();
+		if(null!=pointDataList && !pointDataList.isEmpty()){
+			for(PointData pointData : pointDataList){
+				if(0!=pointData.getTime()){
+					DateTime time  = new DateTime(pointData.getTime()*1000);
+					String timeStr = time.toString(timeFomaterStr);
+					time_Val.put(timeStr, String.valueOf(Math.round(pointData.getValue()*100)/100.0));
+					log.info(time+"-> "+pointData.getValue());
+				}
+			}
+			
+		}else{
+			DateTime startTime = new DateTime(timeStart);
+			DateTime endTime = new DateTime(timeEnd);
+			DateTime sTime = new DateTime(startTime);
+			while(sTime.isBefore(endTime)){
+				time_Val.put(sTime.toString(timeFomaterStr), "-");
+				switch(type){
+				   	case "day"  : sTime = sTime.plusDays(1);   break;
+				   	case "month": sTime = sTime.plusMonths(1); break;
+				   	case "year": sTime = sTime.plusYears(1); break;
+				}
+				
+			}
+			
+		}
+		model.addAttribute("data",time_Val);
+		model.addAttribute("success", true);
+		model.addAttribute("msg", "获取数据成功！");
+	}
 }

@@ -25,7 +25,17 @@ app.controller('MacLoadTabCtrl', function($scope,$interval ) {
 			default:
 				break;
 		}
-		$scope.loadData(globalPoints.point2,$scope.showViewType,globalPoints.point4);
+		switch ($scope.curMacPoint) {
+			case "1":
+				$scope.loadData(globalPoints.point2,$scope.showViewType,globalPoints.point4);
+				break;
+			case "2":
+				$scope.loadData(globalPoints.point3,$scope.showViewType,globalPoints.point5);
+				break;
+			
+			default:
+				break;
+		}
 	}
 	var hourloadChart = echarts.init(document.getElementById('hourloadChart'));
 	var dayloadChart = echarts.init(document.getElementById('dayloadChart'));
@@ -58,7 +68,7 @@ app.controller('MacLoadTabCtrl', function($scope,$interval ) {
 		    ],
 		    series: [
 		        {
-		            name:'#1机组',
+		            name:'值',
 		            type:'line',
 		            data:[],
 		            markPoint: {
@@ -100,7 +110,7 @@ app.controller('MacLoadTabCtrl', function($scope,$interval ) {
 		    ],
 		    series: [
 		        {
-		            name:'#1机组',
+		            name:'值',
 		            type:'line',
 		            data:[],
 		            markPoint: {
@@ -142,7 +152,7 @@ app.controller('MacLoadTabCtrl', function($scope,$interval ) {
 	    ],
 	    series: [
 	        {
-	            name:'#1机组',
+	            name:'值',
 	            type:'line',
 	            data:[],
 	            markPoint: {

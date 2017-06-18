@@ -91,7 +91,7 @@ app.controller('auxMacMonitorTabCtrl', function($scope,$state,$interval) {
     //自动刷新
     autoRefresh = $interval(function(){
 		 $scope.loadData($("#now1").attr("placeholder"));
-	 }, 1000);
+	 }, 20000);
     $scope.changeDate=function(){
     	if($("#now1").val()){
     		$("#now1").attr("placeholder",$("#now1").val())
@@ -99,7 +99,7 @@ app.controller('auxMacMonitorTabCtrl', function($scope,$state,$interval) {
 		 $scope.stopAutoRefresh();
 		 autoRefresh = $interval(function(){
 			 $scope.loadData($("#now1").attr("placeholder"));
-		 }, 1000);
+		 }, 20000);
 	}
     //停止自动刷新
     $scope.stopAutoRefresh = function () {

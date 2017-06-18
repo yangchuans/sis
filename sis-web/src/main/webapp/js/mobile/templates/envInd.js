@@ -17,7 +17,8 @@ app.controller('envIndTabCtrl', function($scope,$interval) {
     	$('#now').attr('placeholder',rst);
     	$('#now').val(rst);
     }
-    
+    $("#now").val(moment().format("YYYY-MM-DD"));
+    $("#now").attr("placeholder",moment().format("YYYY-MM-DD"));
     $scope.loadData = function(timeStr){
 		var points= new Array();
 		for(var i=101;i<=112;i++){

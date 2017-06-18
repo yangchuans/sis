@@ -20,7 +20,7 @@
 		        <div class="col-item row-head-item" >环保指标</div>
 		      </div>
 		      <div class="col col-30" >
-		        <div class="col-item row-head-item">超限时间(h)</div>
+		        <div class="col-item row-head-item">超限时间(m)</div>
 		      </div>
 		      <div class="col col-20" >
 		        <div class="col-item row-head-item">状态</div>

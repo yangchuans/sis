@@ -224,7 +224,7 @@ app.controller('HomeTabCtrl', function($scope,$interval) {
 					allFacLoad.setOption(option_allFacLoad,true);
 					allFacEco.setOption(option_allFacEco,true);
 					mac1.setOption(option_mac1,true);
-					mac2.setOption(option_mac1,true);
+					mac2.setOption(option_mac2,true);
 				}else{
 					console.log(data.msg)
 				}

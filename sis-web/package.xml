@@ -10,7 +10,7 @@
     <fileSets>
         <fileSet>
             <directory>${project.build.directory}/${project.build.finalName}</directory>
-            <outputDirectory>/ROOT</outputDirectory>
+            <outputDirectory>/sis-web</outputDirectory>
         </fileSet>
     </fileSets>
 </assembly>

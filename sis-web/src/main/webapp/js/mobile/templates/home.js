@@ -8,8 +8,8 @@ app.controller('HomeTabCtrl', function($scope,$interval) {
 		series : [
 			{
 	            type: 'gauge',
-	            min: 50,
-	            max: 320,
+	            min: 0,
+	            max: 660,
 	            radius: '100%',
 	            startAngle:315,
 	            endAngle:-315,
@@ -58,8 +58,8 @@ app.controller('HomeTabCtrl', function($scope,$interval) {
 	    series: [
 	    	{
 	            type: 'gauge',
-	            min: 50,
-	            max: 320,
+	            min: 0,
+	            max: 660,
 	            radius: '100%',
 	            startAngle:135,
 	            endAngle:-135,
@@ -108,8 +108,8 @@ app.controller('HomeTabCtrl', function($scope,$interval) {
 		series : [
 			{
 	            type: 'gauge',
-	            min: 50,
-	            max: 500,
+	            min: 0,
+	            max: 1320,
 	            radius: '100%',
 	            startAngle:315,
 	            endAngle:-315,
@@ -158,8 +158,8 @@ app.controller('HomeTabCtrl', function($scope,$interval) {
 	    series: [
 	    	{
 	            type: 'gauge',
-	            min: 100,
-	            max: 800,
+	            min: 0,
+	            max: 3168,
 	            radius: '100%',
 	            startAngle:135,
 	            endAngle:-135,

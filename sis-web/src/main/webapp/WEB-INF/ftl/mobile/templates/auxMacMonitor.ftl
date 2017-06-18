@@ -30,17 +30,19 @@
 	    </div>
 	    <div class="row row-body responsive-break">
 		      <div class="col col-50" >
-		        <div class="col-item" title="" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis; width: 120px;">机组</div>
+		        <div class="col-item" title="" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis; width: 120px;">#1磨煤机A</div>
 		      </div>
 		      <div class="col col-20" > 
-		        <i class="icon  ion-ionic status_blue" style="font-size: 24px;float: left;"></i>
+		        <i ng-class="{true: 'icon  ion-ionic status_blue', false: 'icon  ion-ionic status_red'}[point_auxInfo_53]" style="font-size: 24px;float: left;"></i>
 		      </div>
 		      <div class="col col-20" >
-		        <div class="col-item font-green">12h</div>
+		        <div class="col-item font-green">{{point_auxInfo_77}}h</div>
 		      </div>
+		      <!--
 		      <div class="col col-10" ng-click="viewDeail(1)">
 		        <i class="icon  ion-ios-arrow-right" style="font-size: 24px;float: left;"></i>
 		      </div>
+		      -->
 	   </div>
 	   <div class="row row-body responsive-break">
 		      <div class="col col-50" >

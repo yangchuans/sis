@@ -156,6 +156,20 @@ globalPoints.point100="DCS2.20HLB20AN001RT"
 
 
 
+	
+globalPoints.point101="FW.10HTA60CQ101OT"
+globalPoints.point102="FW.10HTA60CQ103OT"
+globalPoints.point103="FW.10HTA60CQ104OT"
+globalPoints.point104="FW.20HTA60CQ101OT"
+globalPoints.point105="FW.20HTA60CQ103OT"
+globalPoints.point106="FW.20HTA60CQ104OT"
+globalPoints.point107="FW.10HTA60CQ101OS"
+globalPoints.point108="FW.10HTA60CQ103OS"
+globalPoints.point109="FW.10HTA60CQ104OS"
+globalPoints.point110="FW.20HTA60CQ101OS"
+globalPoints.point111="FW.20HTA60CQ103OS"
+globalPoints.point112="FW.20HTA60CQ104OS"
+
 
 
 

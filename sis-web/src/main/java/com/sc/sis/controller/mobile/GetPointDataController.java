@@ -102,9 +102,9 @@ public class GetPointDataController {
 		
 		List<PointData> pointDataList = null;
 		try {
-			pointDataList = getRealTimeDBDataService.SC_GetHistInterpUTC(point, timeStart, timeEnd, timePeriod);
+			pointDataList = getRealTimeDBDataService.SC_GetHistAvgUTC(point, timeStart, timeEnd, timePeriod);
 		} catch (Exception e) {
-			log.error("SC_GetHistInterpUTC失败！points="+point, e);
+			log.error("SC_GetHistAvgUTC失败！points="+point, e);
 		}
 		
 		String timeFomaterStr="";
@@ -119,14 +119,12 @@ public class GetPointDataController {
 		}
 		Map<String,String> time_Val = new LinkedHashMap<>();
 		if(null!=pointDataList && !pointDataList.isEmpty()){
-			if(null!=pointDataList){
-				for(PointData pointData : pointDataList){
-					if(0!=pointData.getTime()){
-						DateTime time  = new DateTime(pointData.getTime()*1000);
-						String timeStr = time.toString(timeFomaterStr);
-						time_Val.put(timeStr, String.valueOf(Math.round(pointData.getValue()*100)/100.0));
-						log.info(time+"-> "+pointData.getValue());
-					}
+			for(PointData pointData : pointDataList){
+				if(0!=pointData.getTime()){
+					DateTime time  = new DateTime(pointData.getTime()*1000);
+					String timeStr = time.toString(timeFomaterStr);
+					time_Val.put(timeStr, String.valueOf(Math.round(pointData.getValue()*100)/100.0));
+					log.info(time+"-> "+pointData.getValue());
 				}
 			}
 			
@@ -214,6 +212,77 @@ public class GetPointDataController {
 		model.addAttribute("success", true);
 		model.addAttribute("msg", "timePeriod="+timePeriod);
 	}
-	
+	@RequestMapping(value="/GetPointsOneDayData")
+    public void GetPointsOneDayData(String[] points, long timeStart, long timeEnd,
+            					long timePeriod,Model model){
+		if(null==points || points.length<1){
+			model.addAttribute("success", false);
+			model.addAttribute("msg", "points="+points);
+			return;
+		}
+		if(timeEnd<timeStart){
+			model.addAttribute("success", false);
+			model.addAttribute("msg", "timeStart>timeEnd");
+			return;
+		}
+		if(timePeriod<0){
+			model.addAttribute("success", false);
+			model.addAttribute("msg", "timePeriod="+timePeriod);
+			return;
+		}
+		Map<String,String > dataMap = new HashMap<>();
+		for(String point:points){
+			List<PointData> pointDataList = null;
+			try {
+				pointDataList = getRealTimeDBDataService.SC_GetHistInterpUTC(point, timeStart, timeEnd, timePeriod);
+			} catch (Exception e) {
+				log.error("SC_GetHistInterpUTC失败！points="+point, e);
+			}
+			if(null!=pointDataList && !pointDataList.isEmpty()){
+				dataMap.put(point, String.valueOf(Math.round(pointDataList.get(0).getValue()*100)/100.0));
+			}else{
+				dataMap.put(point,"-");
+			}
+		}
+		model.addAttribute("data", dataMap);
+		model.addAttribute("success", true);
+		model.addAttribute("msg", "timePeriod="+timePeriod);
+	}
+	@RequestMapping(value="/getManyPointHistAvgUTC")
+    public void getManyPointHistAvgUTC(String[] points, long timeStart, long timeEnd,long timePeriod,Model model){
+		if(null==points||1>points.length){
+			model.addAttribute("success", false);
+			model.addAttribute("msg", "points="+points);
+			return;
+		}
+		if(timeEnd<timeStart){
+			model.addAttribute("success", false);
+			model.addAttribute("msg", "timeStart>timeEnd");
+			return;
+		}
+		if(timePeriod<0){
+			model.addAttribute("success", false);
+			model.addAttribute("msg", "timePeriod="+timePeriod);
+			return;
+		}
+		Map<String,String> time_Val = new LinkedHashMap<>();
+		for(String point : points){
+			List<PointData> pointDataList = null;
+			try {
+				pointDataList = getRealTimeDBDataService.SC_GetHistAvgUTC(point, timeStart, timeEnd, timePeriod);
+			} catch (Exception e) {
+				log.error("SC_GetHistInterpUTC失败！points="+point, e);
+			}
+			if(null!=pointDataList && !pointDataList.isEmpty()){
+				PointData pointData = pointDataList.get(0);
+				time_Val.put(point, String.valueOf(Math.round(pointData.getValue()*100)/100.0));
+			}else{
+				time_Val.put(point,"无数据");
+			}
+		}
+		model.addAttribute("data",time_Val);
+		model.addAttribute("success", true);
+		model.addAttribute("msg", "获取数据成功！");
+	}
 	
 }

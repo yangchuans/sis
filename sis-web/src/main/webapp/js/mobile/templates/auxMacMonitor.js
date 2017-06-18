@@ -1,4 +1,4 @@
-app.controller('auxMacMonitorTabCtrl', function($scope,$state) {
+app.controller('auxMacMonitorTabCtrl', function($scope,$state,$interval) {
 	var calendar = new LCalendar();
     calendar.init({
         'trigger': '#now1', //标签id
@@ -23,4 +23,43 @@ app.controller('auxMacMonitorTabCtrl', function($scope,$state) {
     $scope.viewDeail = function(itemId){
     	$state.go('tabs.runDetail', {item_id: itemId});
     };
+    $scope.loadData=function(){
+    	var points = [];
+    	for(var i=53;i<=100;i++){
+    		var str = "point"+i;
+			points=points.concat(globalPoints[str]);
+    	}
+    	var timeStr = $("#now1").attr("placeholder")
+    	if(!timeStr){
+    		return;
+    	}
+    	var timeStart =moment(timeStr+" 00:00:00").unix();
+    	var timeEnd = moment(timeStr+" 23:59:59").unix();
+    	var timePeriod=24*3600;
+    	$.ajax({
+			type: "GET",
+			url: "GetPointDataController/GetPointsOneDayData?points="+points+"&timeStart="+timeStart+"&timeEnd="+timeEnd+"&timePeriod="+timePeriod,
+			success: function(data){
+				if(data.code="1"){
+					var dataMap = data.data;
+					for(var j=53;j<=100;j++){
+						var str = "point_auxInfo_"+i;
+						var pointStr =  "point"+j;
+						$scope[str]=dataMap[globalPoints[pointStr]];
+						i++;
+					}
+					$scope.$apply();
+					console.log(dataMap);
+				}else{
+					console.log(data.msg)
+				}
+			},
+			error: function(){
+				console.log("请求生产信息数据异常！")
+			}
+		});
+    }
+    $interval(function(){
+    	$scope.loadData();
+    },2000);
 });

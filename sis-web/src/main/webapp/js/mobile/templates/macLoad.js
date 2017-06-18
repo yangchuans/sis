@@ -89,7 +89,7 @@ app.controller('MacLoadTabCtrl', function($scope,$interval ) {
 		            axisTick: {
 		                alignWithLabel: true
 		            },
-		            data: ['4-1','4-1','4-3','4-4','4-5','4-6','4-7','4-8','4-9','4-10','4-11','4-12','4-13','4-14','4-15']
+		            data: []
 		        }
 		    ],
 		    yAxis: [
@@ -102,7 +102,7 @@ app.controller('MacLoadTabCtrl', function($scope,$interval ) {
 		        {
 		            name:'#1机组',
 		            type:'line',
-		            data:[570, 580, 600, 408, 654, 640, 688, 625, 648, 609, 610, 612, 613, 634, 630],
+		            data:[],
 		            markPoint: {
 		                symbol:"pin",
 		                data: [
@@ -131,7 +131,7 @@ app.controller('MacLoadTabCtrl', function($scope,$interval ) {
 	            axisTick: {
 	                alignWithLabel: true
 	            },
-	            data: ['15-01','15-02','15-03','15-04','15-05','15-06','15-07','15-08','15-09','15-10','15-11','15-12','16-01','16-02','16-03']
+	            data: []
 	        }
 	    ],
 	    yAxis: [
@@ -144,7 +144,7 @@ app.controller('MacLoadTabCtrl', function($scope,$interval ) {
 	        {
 	            name:'#1机组',
 	            type:'line',
-	            data:[1570, 1580, 1600, 1408, 1654, 1640, 1688, 1625, 1648, 1609, 1610, 1512, 1513, 1534, 1530],
+	            data:[],
 	            markPoint: {
 	                symbol:"pin",
 	                data: [

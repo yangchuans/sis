@@ -57,7 +57,7 @@ app.controller('MacLoadTabCtrl', function($scope,$interval ) {
 		            axisTick: {
 		                alignWithLabel: true
 		            },
-		            data: []
+		            data:[]
 		        }
 		    ],
 		    yAxis: [
@@ -99,7 +99,7 @@ app.controller('MacLoadTabCtrl', function($scope,$interval ) {
 		            axisTick: {
 		                alignWithLabel: true
 		            },
-		            data: []
+		            data:  []
 		        }
 		    ],
 		    yAxis: [
@@ -206,17 +206,17 @@ app.controller('MacLoadTabCtrl', function($scope,$interval ) {
 				if(data.success){
 					switch (type) {
 						case "hour":
-							option_hourloadChart.series[0].data=Object.values(data.data);
+							option_hourloadChart.series[0].data=getValues(data.data);
 							option_hourloadChart.xAxis[0].data=Object.keys(data.data);
 							hourloadChart.setOption(option_hourloadChart,true);
 							break;
 						case "day":
-							option_dayloadChart.series[0].data=Object.values(data.data);
+							option_dayloadChart.series[0].data=getValues(data.data);
 							option_dayloadChart.xAxis[0].data=Object.keys(data.data);
 							dayloadChart.setOption(option_dayloadChart,true);
 							break;
 						case "month":
-							option_monthloadChart.series[0].data=Object.values(data.data);
+							option_monthloadChart.series[0].data=getValues(data.data);
 							option_monthloadChart.xAxis[0].data=Object.keys(data.data);
 							monthloadChart.setOption(option_monthloadChart,true);
 							break;
@@ -316,5 +316,12 @@ app.controller('MacLoadTabCtrl', function($scope,$interval ) {
     $scope.$on('$stateChangeStart', function (angularEvent, current, previous) {
     	$scope.stopAutoRefresh();
     });
+    function getValues(obj){
+    	var rst = [];
+    	for(var item in obj){
+    		rst.push(obj[item])
+    	}
+    	return rst;
+    }
 	
 });

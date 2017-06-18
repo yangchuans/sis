@@ -204,17 +204,17 @@ app.controller('powerIndTabCtrl', function($scope,$interval) {
 				if(data.success){
 					switch (type) {
 						case "day":
-							option_dayProChart.series[0].data=Object.values(data.data);
+							option_dayProChart.series[0].data=getValues(data.data);
 							option_dayProChart.xAxis[0].data=Object.keys(data.data);
 							dayProChart.setOption(option_dayProChart,true);
 							break;
 						case "month":
-							option_monthProChart.series[0].data=Object.values(data.data);
+							option_monthProChart.series[0].data=getValues(data.data);
 							option_monthProChart.xAxis[0].data=Object.keys(data.data);
 							monthProChart.setOption(option_monthProChart,true);
 							break;
 						case "year":
-							option_yearProChart.series[0].data=Object.values(data.data);
+							option_yearProChart.series[0].data=getValues(data.data);
 							option_yearProChart.xAxis.data=Object.keys(data.data);
 							yearProChart.setOption(option_yearProChart,true);
 							break;
@@ -269,4 +269,11 @@ app.controller('powerIndTabCtrl', function($scope,$interval) {
     $scope.$on('$stateChangeStart', function (angularEvent, current, previous) {
     	$scope.stopAutoRefresh();
     });
+    function getValues(obj){
+    	var rst = [];
+    	for(var item in obj){
+    		rst.push(obj[item])
+    	}
+    	return rst;
+    }
 });

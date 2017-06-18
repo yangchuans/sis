@@ -23,13 +23,13 @@
 		      </div>
 	     </div>
 	     <div class="prod" ng-show="showViewIndex==0" style="width:100%;margin-top: 60px; display: inline-block;">
-	     	 <div id="dayProChart"style="width:100%;height:600px;margin-top:0px;"></div>
+	     	 <div id="dayProChart"style="width:100%;height:550px;margin-top:0px;"></div>
 	     </div>
 	     <div class="prod" ng-show="showViewIndex==1" style="width:100%;margin-top: 60px; display: inline-block;">
-	     	 <div id="monthProChart"style="width:100%;height:600px;margin-top:0px;"></div>
+	     	 <div id="monthProChart"style="width:100%;height:550px;margin-top:0px;"></div>
 	     </div>
 	      <div class="prod" ng-show="showViewIndex==2" style="width:100%;margin-top: 60px; display: inline-block;">
-	     	 <div id="yearProChart"style="width:100%;height:600px;margin-top:0px;"></div>
+	     	 <div id="yearProChart"style="width:100%;height:550px;margin-top:0px;"></div>
 	     </div>
     </ion-content>
 </ion-view>

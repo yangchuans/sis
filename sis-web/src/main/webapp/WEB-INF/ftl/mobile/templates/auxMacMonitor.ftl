@@ -34,7 +34,7 @@
 		        <i ng-class="{'结束': 'icon  ion-ionic status_blue', '未结束': 'icon  ion-ionic status_red'}[point.status]" style="font-size: 24px;float: left;"></i>
 		      </div>
 		      <div class="col col-20" >
-		        <div class="col-item font-green">{{point.time}}h</div>
+		        <div class="col-item font-green">{{point.time}}</div>
 		      </div>
 	   </div>
     </ion-content>

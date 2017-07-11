@@ -50,20 +50,31 @@ app.controller('auxMacMonitorTabCtrl', function($scope,$state,$interval) {
     	$state.go('tabs.runDetail', {item_id: itemId});
     };
     $scope.loadData=function(timeStr){
+    	//如果时间是今天就取实时的,否者就取当天最晚时间的（0点）
+    	if(!timeStr){
+    		return;
+    	}
+    	var timeStart,timeEnd,timePeriod;
+    	if(timeStr==moment().format("YYYY-MM-DD")){
+    		timeStart =moment().unix();
+        	timeEnd = moment().unix();
+    	}else{
+    		var tempTime = moment(timeStr).add(1, 'days').unix();
+    		timeStart =tempTime;
+        	timeEnd = tempTime;
+        	
+    	}
+    	timePeriod=86400;
     	var points = [];
     	for(var i=53;i<=100;i++){
     		var str = "point"+i;
 			points=points.concat(globalPoints[str]);
     	}
-    	if(!timeStr){
-    		return;
-    	}
-    	var timeStart =moment(timeStr+" 00:00:00").unix();
-    	var timeEnd = moment(timeStr+" 23:59:59").unix();
-    	var timePeriod=24*3600;
+    	
+    	
     	$.ajax({
 			type: "GET",
-			url: "GetPointDataController/getManyPointHistAvgUTC?points="+points+"&timeStart="+timeStart+"&timeEnd="+timeEnd+"&timePeriod="+timePeriod,
+			url: "GetPointDataController/GetPointsOneDayData?points="+points+"&timeStart="+timeStart+"&timeEnd="+timeEnd+"&timePeriod="+timePeriod,
 			success: function(data){
 				if(data.code="1"){
 					var dataMap = data.data;
@@ -97,6 +108,7 @@ app.controller('auxMacMonitorTabCtrl', function($scope,$state,$interval) {
     		$("#now1").attr("placeholder",$("#now1").val())
     	}
 		 $scope.stopAutoRefresh();
+		 $scope.loadData($("#now1").attr("placeholder"));
 		 autoRefresh = $interval(function(){
 			 $scope.loadData($("#now1").attr("placeholder"));
 		 }, 20000);

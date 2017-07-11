@@ -241,7 +241,7 @@ public class GetPointDataController {
 			if(null!=pointDataList && !pointDataList.isEmpty()){
 				dataMap.put(point, String.valueOf(Math.round(pointDataList.get(0).getValue()*100)/100.0));
 			}else{
-				dataMap.put(point,"-");
+				dataMap.put(point,"没有数据");
 			}
 		}
 		model.addAttribute("data", dataMap);

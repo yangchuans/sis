@@ -20,20 +20,33 @@ app.controller('envIndTabCtrl', function($scope,$interval) {
     $("#now").val(moment().format("YYYY-MM-DD"));
     $("#now").attr("placeholder",moment().format("YYYY-MM-DD"));
     $scope.loadData = function(timeStr){
+    	if(!timeStr){
+    		return;
+    	}
+    	//如果时间是今天就取实时的,否者就取当天最晚时间的（0点）
+    	if(!timeStr){
+    		return;
+    	}
+    	var timeStart,timeEnd,timePeriod;
+    	if(timeStr==moment().format("YYYY-MM-DD")){
+    		timeStart =moment().unix();
+        	timeEnd = moment().unix();
+    	}else{
+    		var tempTime = moment(timeStr).add(1, 'days').unix();
+    		timeStart =tempTime;
+        	timeEnd = tempTime;
+        	
+    	}
+    	timePeriod=86400;
 		var points= new Array();
 		for(var i=101;i<=112;i++){
 			var str = "point"+i;
 			points=points.concat(globalPoints[str]);
 		}
-    	if(!timeStr){
-    		return;
-    	}
-    	var timeStart =moment(timeStr+" 00:00:00").unix();
-    	var timeEnd = moment(timeStr+" 23:59:59").unix();
-    	var timePeriod=24*3600;
+    	
 		$.ajax({
 			type: "GET",
-			url: "GetPointDataController/getManyPointHistAvgUTC?points="+points+"&timeStart="+timeStart+"&timeEnd="+timeEnd+"&timePeriod="+timePeriod,
+			url: "GetPointDataController/GetPointsOneDayData?points="+points+"&timeStart="+timeStart+"&timeEnd="+timeEnd+"&timePeriod="+timePeriod,
 			success: function(data){
 				if(data.code="1"){
 					var dataMap = data.data;
@@ -67,6 +80,7 @@ app.controller('envIndTabCtrl', function($scope,$interval) {
     		$("#now").attr("placeholder",$("#now").val());
     	}
 		 $scope.stopAutoRefresh();
+		 $scope.loadData($("#now").attr("placeholder"));
 		 autoRefresh = $interval(function(){
 			 $scope.loadData($("#now").attr("placeholder"));
 		 }, 5000);
